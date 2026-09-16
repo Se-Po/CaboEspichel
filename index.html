@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cabo Espichel — semnul din piatră</title>
+<style>
+:root{
+  --bg:#f7f3ea;
+  --surface:#fffdf7;
+  --surface-2:#fbf6ec;
+  --ink:#24211c;
+  --muted:#5e564b;
+  --faint:#8b8174;
+  --line:#e4dccb;
+  --line-soft:#eee7d9;
+  --accent:#7a3b2e;
+  --accent-soft:#9a5343;
+  --gold:#94752f;
+  --c-f:#3d6b4c;
+  --c-d:#6a4a78;
+  --c-t:#8a6326;
+  --c-i:#2b5c7c;
+  --c-x:#9b3a30;
+  --shadow:0 1px 2px rgba(60,44,24,.05), 0 8px 24px rgba(60,44,24,.07);
+  --shadow-lg:0 24px 70px rgba(40,28,14,.3);
+  --serif:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua",Cambria,"Times New Roman",serif;
+  --sans:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#17150f;
+    --surface:#1e1b15;
+    --surface-2:#24211a;
+    --ink:#ece5d6;
+    --muted:#aaa08e;
+    --faint:#887e6d;
+    --line:#332e24;
+    --line-soft:#2a251d;
+    --accent:#d99177;
+    --accent-soft:#e9a992;
+    --gold:#d3b063;
+    --c-f:#7fb28d;
+    --c-d:#b394c2;
+    --c-t:#d0a660;
+    --c-i:#8cbcdb;
+    --c-x:#e08a80;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    --shadow-lg:0 24px 70px rgba(0,0,0,.6);
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+html.locked,body.locked{overflow:hidden}
+.wrap{max-width:1140px;margin:0 auto;padding-inline:20px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface-2) 0%,var(--bg) 100%)}
+.hero .wrap{padding-block:clamp(38px,7vw,78px)}
+.kicker{font-size:.76rem;letter-spacing:.17em;text-transform:uppercase;color:var(--faint);margin:0 0 18px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,6.4vw,3.6rem);line-height:1.08;margin:0 0 6px;letter-spacing:-.01em}
+h1 .sub{display:block;font-size:clamp(1rem,2.6vw,1.35rem);color:var(--accent);margin-top:14px;font-style:italic;letter-spacing:0}
+.thesis{font-family:var(--serif);font-size:clamp(1.02rem,2.2vw,1.2rem);line-height:1.6;color:var(--muted);max-width:35rem;margin:26px 0 0;padding-left:18px;border-left:2px solid var(--gold)}
+.cliff{position:absolute;right:-30px;bottom:-10px;width:min(46%,430px);opacity:.5;pointer-events:none;color:var(--accent)}
+@media (max-width:760px){.cliff{position:static;display:block;width:100%;max-width:340px;margin:30px 0 -10px;opacity:.45}}
+
+/* ---------- story ---------- */
+.story-sec{padding-block:clamp(40px,7vw,78px)}
+.story{max-width:40rem;margin:0 auto}
+.story h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,4vw,2.05rem);margin:0 0 4px;line-height:1.2}
+.story .h2-note{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 30px}
+.story p{font-family:var(--serif);font-size:1.11rem;line-height:1.78;margin:0 0 1.25em;color:var(--ink)}
+.story p.first::first-letter{float:left;font-size:3.5em;line-height:.84;padding:.06em .1em 0 0;color:var(--accent);font-family:var(--serif)}
+.story .gratitude{margin-top:2.4em;padding:26px 28px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.story .gratitude p{margin:0;font-size:1.08rem}
+.story .gratitude p + p{margin-top:1.1em}
+.story .gratitude .amen{font-style:italic;color:var(--accent);font-size:.98rem}
+.repere{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:0 0 34px;
+  background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+@media (max-width:660px){.repere{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:330px){.repere{grid-template-columns:1fr}}
+.repere div{background:var(--surface);padding:13px 15px}
+.repere b{display:block;font-family:var(--serif);font-weight:400;font-size:1rem;color:var(--accent);margin-bottom:4px;letter-spacing:.01em}
+.repere span{display:block;font-size:.82rem;line-height:1.45;color:var(--muted)}
+.note{max-width:40rem;margin:2.6em auto 0;padding:16px 20px;border-left:2px solid var(--line);
+  font-size:.92rem;line-height:1.66;color:var(--muted);font-family:var(--sans)}
+.note strong{color:var(--ink)}
+
+/* ---------- tiles ---------- */
+.tiles-sec{padding-block:clamp(40px,7vw,72px);background:var(--surface-2);border-top:1px solid var(--line)}
+.sec-head{max-width:40rem;margin:0 0 30px}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.45rem,4vw,1.95rem);margin:0 0 12px}
+.sec-head p{color:var(--muted);line-height:1.65;margin:0 0 .9em;font-size:1rem}
+.legend{display:flex;flex-wrap:wrap;gap:10px 16px;margin:0 0 30px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-size:.84rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(278px,1fr));gap:16px}
+.tile{display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;cursor:pointer;
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px;
+  box-shadow:var(--shadow);transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.tile:hover{transform:translateY(-3px);border-color:var(--accent-soft);box-shadow:0 10px 30px rgba(122,59,46,.14)}
+.tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.tile .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.tile .num{font-family:var(--serif);font-size:1.02rem;color:var(--gold);letter-spacing:.04em}
+.kind{font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid currentColor;opacity:.85}
+.kind.a{color:var(--c-f)}
+.kind.b{color:var(--c-i)}
+.kind.c{color:var(--gold)}
+.tile h3{font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.24;margin:0 0 6px}
+.tile .subtitle{font-size:.86rem;color:var(--accent);margin:0 0 14px}
+.tile .lead{font-size:.95rem;line-height:1.58;color:var(--muted);margin:0 0 18px;flex:1}
+.tile .cta{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);display:inline-flex;align-items:center;gap:7px}
+.tile:hover .cta{color:var(--accent)}
+.tile .cta svg{transition:transform .16s ease}
+.tile:hover .cta svg{transform:translateX(3px)}
+
+/* ---------- markers ---------- */
+.m{display:inline-flex;align-items:center;justify-content:center;min-width:1.35em;height:1.35em;padding:0 .35em;
+  margin-right:.5em;border-radius:5px;font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.02em;
+  vertical-align:.12em;border:1px solid currentColor;background:transparent;cursor:help;white-space:nowrap}
+.m-f{color:var(--c-f)} .m-d{color:var(--c-d)} .m-t{color:var(--c-t)} .m-i{color:var(--c-i)} .m-x{color:var(--c-x)}
+
+/* ---------- dialog ---------- */
+dialog.story-modal{padding:0;border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--ink);
+  width:min(100% - 28px,47rem);max-width:47rem;max-height:min(88vh,980px);overflow:hidden;box-shadow:var(--shadow-lg)}
+dialog.story-modal::backdrop{background:rgba(30,22,12,.58)}
+@media (prefers-color-scheme:dark){dialog.story-modal::backdrop{background:rgba(0,0,0,.68)}}
+.modal-inner{display:flex;flex-direction:column;max-height:inherit}
+.modal-head{display:flex;align-items:flex-start;gap:16px;padding:22px 24px 18px;border-bottom:1px solid var(--line);background:var(--surface);flex:0 0 auto}
+.modal-head .titles{flex:1;min-width:0}
+.modal-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.3rem,3.6vw,1.65rem);line-height:1.22;margin:0}
+.modal-head .msub{font-size:.88rem;color:var(--accent);margin:7px 0 0}
+.x{flex:0 0 auto;width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:var(--surface-2);
+  color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;line-height:1}
+.x:hover{color:var(--ink);border-color:var(--accent-soft)}
+.x:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.modal-body{overflow-y:auto;overscroll-behavior:contain;padding:26px 24px 34px;-webkit-overflow-scrolling:touch}
+.modal-body > :first-child{margin-top:0}
+.modal-body p{font-family:var(--serif);font-size:1.03rem;line-height:1.72;margin:0 0 1.15em}
+.modal-body h4{font-family:var(--serif);font-weight:400;font-size:1.16rem;margin:1.9em 0 .7em;color:var(--accent);line-height:1.3}
+.modal-body h4:first-child{margin-top:0}
+.modal-body ul,.modal-body ol{font-family:var(--serif);font-size:1.02rem;line-height:1.7;padding-left:1.3em;margin:0 0 1.2em}
+.modal-body li{margin-bottom:.5em}
+.modal-body blockquote{margin:0 0 1.2em;padding:2px 0 2px 18px;border-left:2px solid var(--gold);
+  font-family:var(--serif);font-style:italic;color:var(--muted);line-height:1.66}
+.pull{font-family:var(--serif);font-size:1.16rem;line-height:1.5;color:var(--accent);margin:0 0 1.3em;padding:16px 20px;
+  background:var(--surface-2);border-radius:11px;border:1px solid var(--line-soft)}
+.scriptura{font-family:var(--serif);font-size:1.03rem;line-height:1.66;margin:0 0 1.3em;padding:16px 20px;
+  background:var(--surface-2);border-radius:11px;border:1px solid var(--line-soft);border-left:3px solid var(--gold)}
+.scriptura cite{display:block;margin-top:.6em;font-size:.84rem;font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.tbl-wrap{overflow-x:auto;margin:0 0 1.4em;border:1px solid var(--line);border-radius:11px;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:.93rem;font-family:var(--sans)}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.5}
+thead th{background:var(--surface-2);font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+tbody tr:last-child td{border-bottom:0}
+.refs{margin-top:2.2em;padding-top:20px;border-top:1px solid var(--line)}
+.refs h4{font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 12px}
+.refs ul{list-style:none;padding:0;margin:0;font-family:var(--sans);font-size:.86rem;line-height:1.6;color:var(--muted)}
+.refs li{margin-bottom:.62em;padding-left:15px;position:relative}
+.refs li::before{content:"—";position:absolute;left:0;color:var(--faint)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding-block:34px 46px;color:var(--faint);font-size:.87rem;line-height:1.65}
+footer p{margin:0 0 .6em;max-width:44rem}
+footer strong{color:var(--muted);font-weight:600}
+@media (max-width:520px){
+  .modal-head{padding:18px 18px 15px}
+  .modal-body{padding:22px 18px 30px}
+  .tile{padding:20px 18px 16px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Sesimbra · Portugalia</p>
+    <h1>Cabo Espichel
+      <span class="sub">semnul din perete și oamenii care au urcat la el</span>
+    </h1>
+    <p class="thesis">Adânciturile din peretele falezei sunt cinstite de cel puțin șase secole ca urmele copitelor catârcei pe care Maica Domnului a urcat din mare — și sunt, tot ele, icnofosile de sauropode vechi de aproape o sută cincizeci de milioane de ani. Pagina nu alege între cele două propoziții: ele răspund la întrebări diferite.</p>
+    <svg class="cliff" viewBox="0 0 400 150" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="currentColor" stroke-linecap="round">
+        <path d="M0 126h150M0 136h108M22 116h96" stroke-width="1.5" opacity=".45"/>
+        <path d="M150 128 L262 34 L400 34 L400 150 L150 150 Z" fill="currentColor" opacity=".08" stroke="none"/>
+        <path d="M150 128 L262 34 L400 34" stroke-width="1.8" opacity=".75"/>
+        <g stroke-width="1" opacity=".3">
+          <path d="M186 150 L292 62"/><path d="M214 150 L320 62"/><path d="M242 150 L348 62"/><path d="M270 150 L376 62"/>
+        </g>
+      </g>
+      <g fill="currentColor" opacity=".85">
+        <ellipse cx="184" cy="122" rx="7.5" ry="5" transform="rotate(-40 184 122)"/>
+        <ellipse cx="203" cy="106" rx="7.5" ry="5" transform="rotate(-40 203 106)"/>
+        <ellipse cx="222" cy="90" rx="7.5" ry="5" transform="rotate(-40 222 90)"/>
+        <ellipse cx="241" cy="74" rx="7.5" ry="5" transform="rotate(-40 241 74)"/>
+        <ellipse cx="260" cy="58" rx="7.5" ry="5" transform="rotate(-40 260 58)"/>
+        <ellipse cx="281" cy="47" rx="7.5" ry="5" transform="rotate(-18 281 47)"/>
+        <ellipse cx="303" cy="42" rx="7.5" ry="5" transform="rotate(-6 303 42)"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<main>
+<section class="story-sec">
+  <div class="wrap">
+    <article class="story">
+      <h2>Povestea locului</h2>
+      <p class="h2-note">Un promontoriu pe care s-a trecut neîntrerupt</p>
+
+      <div class="repere" aria-label="Reperele locului">
+        <div><b>~145 Ma</b><span>șapte sauropode tinere trec împreună</span></div>
+        <div><b>~15–20 Ma mai târziu</b><span>alte urme, peste golf</span></div>
+        <div><b>1366</b><span>cea dintâi hârtie despre pelerinaj</span></div>
+        <div><b>sec. XV</b><span>urmele sunt citite ca urme de copită</span></div>
+        <div><b>1701–1707</b><span>biserica, peste capela de pe buza falezei</span></div>
+        <div><b>1971</b><span>cea dintâi echipă de cercetare</span></div>
+      </div>
+
+      <p class="first">Începe cu noroi. Acum vreo sută patruzeci și cinci de milioane de ani, șapte animale tinere — sauropode — au mers unul lângă altul pe o platformă calcaroasă: aceeași direcție, aceeași viteză. Mergeau; nu fugeau de nimic. Noroiul le-a primit greutatea și s-a făcut piatră. Pe urmă placa africană a împins spre Europa, lanțul Arrábidei s-a ridicat, iar suprafața pe care merseseră a rămas oblică — înclinată, nu verticală —, cu fața spre cer, în peretele unei faleze de o sută treizeci de metri. Fără mișcarea asta, urmele ar fi rămas îngropate.</p>
+
+      <p>Oamenii au venit târziu, și au venit ca să aștepte: optsprezece așezări preistorice pe terasele lăsate de mare; apoi corăbiile romane, de la care au rămas aici mai mult de jumătate din cepurile de ancoră găsite pe toată coasta portugheză; apoi un așezământ islamic, <em>az-zāwiya</em>, de unde satul de alături se cheamă și azi Azóia. În aprilie 1366, o cancelarie regală notează în treacăt închinători din Azeitão „care merg la Santa Maria do Cabo" — fără mirare, fiindcă drumul era deja bătut. Povestirea care spune cum a început e mai târzie decât hârtia: 1707 și 1817. Sanctuarul e romano-catolic, astăzi în grija Diecezei de Setúbal.</p>
+
+      <p>Iar tradiția locului spune așa. Un țăran din Alcabideche, de la nord de Tejo, și o femeie în vârstă din Caparica, de la sud, văd în vis, fiecare în satul lui, aceeași lumină statornică deasupra promontoriului; pornesc și se întâlnesc pe drum. Jos, pe plaja de sub faleză, Maica Domnului vine dinspre mare călare pe o catârcă, iar animalul urcă peretele — și copitele îi rămân întipărite în piatră. Cel care a așternut povestirea pe hârtie, în 1817, aseamănă lumina aceea cu rugul din Madian, care ardea fără să se mistuie. Nu tâlcuim visul; îl spunem așa cum l-a păstrat locul.</p>
+
+      <p>Urmele se văd și astăzi. Cine a privit, cel târziu în secolul al XV-lea, șirul acela de adâncituri a dedus corect că ceva greu a urcat pe acolo, apăsând; ce anume le-a lăsat a spus-o paleontologia, patru secole mai târziu. Aceasta e granița paginii, spusă o singură dată: geologia spune din ce e făcută piatra și când s-a întipărit semnul în ea — nu cine s-a arătat deasupra ei. Iar oamenii au zidit: o capelă pe buza falezei, chiar deasupra urmelor — <em>Ermida da Memória</em>, capela pomenirii, cu zece panouri de faianță în care urmele sunt desenate anume; apoi biserica; apoi două aripi de case, fiecare parohie cu casa ei; apoi un apeduct de doi kilometri, fiindcă promontoriul n-are apă; și un teatru, la cincisprezece kilometri de cel mai apropiat oraș.</p>
+
+      <p>Nu așezămintele monahale au ținut locul: două l-au primit în dar, în 1414 și 1428, și au plecat amândouă, învinse de climă. A rămas cuvântul dat între sate — douăzeci și șase de parohii duceau praznicul pe rând, deci fiecare o dată la douăzeci și șase de ani; un om apuca rândul satului său o dată, poate de două ori în viață. Iar când, în 1971, urmele și-au primit numele, nimic nu s-a surpat: capela e tot pe buza falezei, faianța tot înăuntru, iar <em>Pedra da Mua</em> — „Piatra Catârcei" — e astăzi denumirea oficială a sitului în literatura științifică. Explicația nouă nu a înlocuit-o pe cea veche; s-a așezat peste ea, ca încă un strat.</p>
+
+      <div class="gratitude">
+        <p>Aici se cuvine mulțumire, și ea nu e de ordin științific. Ce s-a văzut pe plaja aceea nu se cântărește cu documente, și pagina asta nu se preface că poate. Mulțumim pentru lucrurile care se văd: pentru un noroi care a ținut un pas de după-amiază o sută patruzeci și cinci de milioane de ani; pentru o mișcare a pământului care l-a ridicat exact cât trebuia ca să poată fi văzut; pentru oameni săraci care, dând peste un semn pe care nu-l puteau tâlcui, au urcat acolo și au zidit; și pentru șase veacuri în care sate întregi și-au dus, din neam în neam, lumânarea până la capătul pământului.</p>
+        <p class="amen">Iar celor care ajung acolo le rămâne de făcut ce au făcut și cei dinaintea lor, când ajungeau sus și vedeau marea: să mulțumească. Slavă lui Dumnezeu pentru toate — pentru piatra care a ținut minte, pentru marea de dedesubt, și pentru oamenii care au urcat acolo cu lumânarea în mână.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="tiles-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Straturile locului</h2>
+      <p>Un promontoriu pe care s-a trecut neîntrerupt: piatra, semnul, oamenii care l-au cinstit, și ce a aflat știința mai târziu despre el. Fiecare tile deschide un strat.</p>
+      <p>Ce urmează sunt, pe rând, fapte verificate și citiri ale lor. Distincția e marcată în text și nu se amestecă nicăieri.</p>
+    </div>
+
+    <div class="legend" aria-label="Legenda marcajelor de fiabilitate">
+      <span><b class="m m-f">F</b> fapt documentat</span>
+      <span><b class="m m-f">F?</b> fapt probabil, o singură sursă</span>
+      <span><b class="m m-d">D</b> dispută între specialiști</span>
+      <span><b class="m m-t">T</b> ce s-a păstrat prin tradiție</span>
+      <span><b class="m m-i">I</b> citire, nu fapt</span>
+      <span><b class="m m-x">✗</b> afirmație falsă sau nesusținută</span>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Ce e fapt și ce e citire stă separat pe toată pagina.</strong> Faptele geologice, paleontologice, arheologice și documentare sunt verificate în surse primare sau științifice. Citirile sunt marcate ca atare și nu pretind să fie descoperiri.</p>
+    <p>Espichel este un sanctuar romano-catolic portughez. Faptele de aici sunt redate ca atare, iar cinstirea Maicii Domnului e numită cu vocabularul ortodox al cititorului acestei pagini.</p>
+    <p>Material documentar compilat pe 12 septembrie 2026.</p>
+  </div>
+</footer>
+
+<dialog class="story-modal" id="modal" aria-labelledby="modal-title">
+  <div class="modal-inner">
+    <div class="modal-head">
+      <div class="titles">
+        <h2 id="modal-title"></h2>
+        <p class="msub" id="modal-sub"></p>
+      </div>
+      <button class="x" id="modal-close" type="button" aria-label="Închide">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body" tabindex="-1"></div>
+  </div>
+</dialog>
+
+<template data-story="perete">
+  <h4>Structura</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Cabo Espichel este terminația vestică a <strong>Cadeia da Arrábida</strong>, cea mai importantă structură de inversiune tectonică a Bazinului Lusitanian. Un lanț de vreo 35 km emerși, orientat VSV–ENE, lat de 5–7 km, care se prelungește în larg până la vreo 95 km în total. Cavalgamentele — pânzele de șariaj — au vergență spre sud și sunt înrădăcinate într-un singur nivel de decolare: evaporitele hettangiene ale Formației de Dagorda, la contactul cuverturii mezozoice cu soclul varisc. Împreună cu structura Sintrei formează un pop-up Arrábida–Sintra.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Două impulsuri de deformare: unul acum ~17,5–16,5 milioane de ani (Burdigalian superior), altul acum ~9,0–7,0 milioane de ani (Tortonian terminal). Scurtarea măsurată pe secțiunea balansată Albarquel–Quinta do Anjo e de 35% — 15,4 km deveniți 10,0 km, adică 5,4 km de scurtare în vreo 9,5 milioane de ani, cam 0,6 mm pe an. Ridicarea Serrei do Formosinho: ~3 mm pe an, comparabilă cu Alpii de sud-vest. Motorul e convergența Africa–Eurasia, astăzi NV–SE, cu 3,8–5,6 mm pe an.</p>
+
+  <h4>De ce sunt stratele înclinate</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Falezele expun flancul înclinat spre nord al structurii. Broșura de geodiversitate a municipiului dă <strong>30°–40° spre nord la Pedra da Mua</strong>; o teză de geomorfologie dă 50°–75° pentru banda monoclinală nordică a lanțului. Structura locală e descrisă și ca anticlinal asimetric cu vergență sudică, parțial colapsat.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Stratele <strong>nu</strong> sunt „aproape verticale". Valorile reale pe suprafețele cu urme sunt de 30–45°. Impresia de verticalitate vine din faptul că faleza taie oblic stratele — ochiul suprapune înclinarea stratului peste verticala peretelui.</p>
+
+  <h4>Stratigrafia, cu denumirile corecte</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Pentru Jurasicul superior, unitatea formală este <strong>„Calcários, grés e margas de Espichel"</strong> (siglă J3Es), Kimmeridgian–Tithonian, pe harta geologică 1:50.000, foaia 38-B Setúbal. Grosimea ansamblului jurasic: 600–1000 m.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Nu există o „Formação de Espichel". „Camadas de Alcobaça" e o unitate din sub-bazinul Bombarral/Alcobaça, iar „Formação de Guincho" e din regiunea Cascais–Sintra — confuzia e ușoară, fiindcă la Espichel există o <em>Praia do Guincho</em> omonimă.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Aflorimentul continuu de la Serra de Gaiteiros, în est, până la Cabo Espichel–Lagosteiros, în vest, este <strong>unul dintre cele mai bune exemple de variație laterală de facies din tot bazinul</strong>: conuri aluviale continentale în est, unități intertidale la mijloc, platformă carbonatată marină de mică adâncime în vest. Amoniți (<em>Virgatosphinctes frequens</em>), baza Tithonianului marcată de <em>Lithacoceras siliceum</em>, laminite algale, niveluri intens bioturbate. Tranziția Jurasic–Cretacic se face aici în mediu marin continuu — ceea ce e rar și valoros științific.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Pentru Cretacicul inferior, la nord de cap, sunt cartate douăsprezece formațiuni, cu ~350 m grosime:</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Formațiune</th><th>Vârstă</th><th>Mediu</th></tr></thead>
+    <tbody>
+      <tr><td>Fm. das Ladeiras</td><td>Hauterivian</td><td>alternanțe calcare/marne infralitorale → situl Lagosteiros</td></tr>
+      <tr><td>Fm. de Areia do Mastro</td><td>Hauterivian terminal–Barremian bazal</td><td>marin puțin adânc + lagună restrânsă</td></tr>
+      <tr><td>Fm. de Papo-Seco</td><td>Barremian inferior</td><td>lagună/estuar alternând cu fluvial; lignit, gips</td></tr>
+      <tr><td>Fm. de Boca do Chapim</td><td>Barremian mediu</td><td>—</td></tr>
+      <tr><td>Fm. de Regatão</td><td>Barremian superior</td><td>câmpie costieră inter- și supratidală</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>Cum arată capul astăzi</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Altitudinea capului: 134 m; falezele din sectorul geositului, 130–140 m. „Plataforma do Cabo" e o suprafață de abraziune marină pliocenă, dezvoltată regional la 190–220 m și coborâtă la 140 m la Espichel, basculată tectonic spre vest. La Forte da Baralha există o platformă de abraziune la 7 m, atribuită Eemianului — acum vreo 125.000 de ani.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Opt grote sunt catalogate la Cabo Espichel. <em>Gruta da Garganta do Cabo</em> are o galerie principală de <strong>30 m diametru și 50 m înălțime</strong>, cu două intrări — una la nivelul mării, „Furna", alta la vreo 30 m, „Lapa/Fojo das Pombas" — dezvoltată pe o linie de fractură. Tavanul ei e un depozit de plajă veche consolidată, iar conducte anterioare erau umplute cu nisipuri de plajă cimentate: dovadă directă a oscilațiilor nivelului marin.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><em>Praia dos Lagosteiros</em> e o plajă de buzunar la baza falezei, cu sediment foarte grosier — bolovăniș, semn de hidrodinamism ridicat.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Riscul de prăbușire e real: basculare pe fracturi subverticale, alunecare planară, subescavare bazală. Există o evaluare formală de risc pentru tronsonul Cabo Espichel–Albarquel, iar un program guvernamental din 2019 definește <em>faixas de risco</em> pentru faleze.</p>
+
+  <h4>Cutremurele</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><span class="m m-d" title="Dispută reală între specialiști">D</span>Cutremurul din <strong>1 noiembrie 1755</strong>: magnitudine estimată Mw ~8,3–8,9 — cifră genuin disputată. Intensitate epicentrală X–XI, până la XII, pe scara MSK; tsunami cu run-up de 5–15 m pe coastele de sud-vest ale Iberiei. Sursa tectonică e încă deschisă: <em>Falha do Marquês de Pombal</em>, <em>Banco de Gorringe</em>, sau — ipoteza cea mai recentă — <em>Horseshoe Abyssal Plain Thrust</em>, care reproduce cel mai bine energia și timpii de sosire ai valului.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Pentru Setúbal, cel mai apropiat oraș cu documentare cantitativă: trei valuri majore, între 6 și 17,5 m; inundație până la vreo 400 de metri în interior; oscilații ale nivelului mării peste patru ore; peste 2.000 de morți dintr-o populație de 11.842, adică 16,9%. Un studiu compilează 207 relatări istorice despre eveniment.</p>
+  <p><span class="m m-f" title="Fapt probabil, dintr-o singură sursă secundară, neverificat independent">F?</span>Pentru Sesimbra și pentru capul însuși nu există date cantitative publicate — nici run-up, nici mărturii locale. Confirmat indirect doar că Forte do Cavalo a fost afectat. Nu se inventează cifre.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>28 februarie 1969: Mw 7,9, zona Horseshoe/Gorringe, cu tsunami minor. <strong>Nu există falie activă la Cabo Espichel însuși</strong> — sursele majore sunt la peste 200 km în larg, spre sud-vest; structurile locale sunt post-cretacice, cu reactivări miocene și cuaternare.</p>
+
+  <h4>Cum e ocrotit locul</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><em>Pedra da Mua</em>, <em>Lagosteiros</em> și <em>Pedreira do Avelino</em> sunt <strong>Monumente Naturale</strong> din 7 mai 1997, integrate în Parcul Natural Arrábida din 2005; Lagosteiros are 5,8 ha. Espichel e geosit inventariat în inventarul național. În septembrie 2025, Arrábida a fost recunoscută <strong>Rezervație a Biosferei UNESCO</strong>, cu protecție marină pe 38 km, de la Praia da Figueirinha până la Cabo Espichel.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Nu există Geoparc UNESCO și nu există statut de Patrimoniu Mondial pentru Arrábida. Candidatura la Patrimoniu Mondial Mixt a rămas la stadiul de pre-candidatură. Presa confundă constant cele trei statute.</p>
+</template>
+
+<template data-story="semnul">
+  <h4>Pedra da Mua</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Coordonate 38°25'20"N / 09°12'58"V, pe falezele de pe latura sudică a golfului Lagosteiros, la vreo 1 km nord-nord-est de cap. Vârstă: Jurasic superior, <strong>Tithonian</strong>, aproximativ 149–143 milioane de ani, în „Calcários, grés e margas de Espichel".</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>De evitat „142–146 Ma" și „140–130 Ma" pentru Tithonian. Corect: ~149–143 Ma.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Descoperirea-cheie</strong>, confirmată în trei surse independente: pe nivelul 3 se află <strong>șapte piste subparalele de sauropode juvenile</strong>, deplasându-se în aceeași direcție, cu aceeași viteză — cea dintâi dovadă europeană de comportament gregar, de turmă, la sauropode. Publicația primară: Lockley, Meyer &amp; dos Santos, „Trackway evidence for a herd of juvenile sauropods from the Late Jurassic of Portugal", <em>Gaia</em> 10 (1994), 27–35.</p>
+  <p><span class="m m-f" title="Fapt probabil, dintr-o singură sursă secundară, neverificat independent">F?</span>Următoarele cifre vin dintr-o sursă municipală și <strong>nu sunt confirmate într-un articol peer-reviewed</strong> — se dau ca estimări: opt niveluri stratigrafice cu urme; vreo 40 de piste bine păstrate; vreo 700 de urme individuale; 38 de piste de sauropode și 2 de teropode. Dimensiuni: urme juvenile 25–30 cm (medie 28), adulți 70–80 cm, teropod 42×35 cm. Viteze estimate: juvenili 3,6–5 km/h, adulți 3,3–4,1 km/h — deci mers, nu alergare. Pista 3 ar prezenta neregularități interpretate ca animal șchiop.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Istoricul cercetării: 1971, prima expediție a Universității din Lisabona, la cererea dr. Eduardo Serrão și dr. Luís Saldanha; 1976, primele fotografii publicate (M. T. Antunes); 1992–93, cartare exhaustivă; 1994, publicațiile Lockley și Santos; sinteze în 2003 și 2008. <strong>Nivelul 5</strong> conține urmele legate direct de povestirea locului — cele reprezentate pe azulejos în Ermida da Memória.</p>
+
+  <h4>Lagosteiros, peste golf</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Pe latura nordică a golfului, față în față cu Pedra da Mua, la câteva sute de metri. Vârstă: <strong>Hauterivian</strong>, Formação das Ladeiras — verificat direct în Antunes &amp; Mateus (2003), care scriu textual: <em>„Lagosteiros Bay: theropods, ornithopod and sauropods. Unit: 'Formação de Ladeiras'. Age: Hauterivian."</em></p>
+  <p><span class="m m-d" title="Dispută reală între specialiști">D</span>Dispută nerezolvată: Antunes (1976) a atribuit o pistă foarte mare unui sauropod; atribuirea a fost contestată, aceeași pistă fiind reasignată unui dinozaur biped. Antunes &amp; Mateus (2003): <em>„This has been contested, the same trackway being assigned to a bipedal dinosaur; we maintain our previous opinion."</em></p>
+  <p class="pull">Decalajul real dintre cele două situri este de aproximativ cincisprezece-douăzeci de milioane de ani, nu de cincizeci. Două ferestre de timp, față în față peste același golf — și tot e un interval mai lung decât toată istoria genului <em>Homo</em>.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Cifra „50 de milioane de ani" circulă în presa turistică și în notițe mai vechi. Chiar comparând Pedra da Mua cu siturile barremiene, decalajul maxim e de ~20–25 Ma.</p>
+
+  <h4>Celelalte situri din jur</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Trei din cele cinci Monumente Naturale cu dinozauri din Portugalia sunt în concelhoul Sesimbra.</p>
+  <ul>
+    <li><strong>Praia da Areia do Mastro</strong> — cel mai bogat sit ca număr de urme din Portugalia: <strong>614 urme pe vreo 1350 m²</strong>, pe trei bănci calcaroase. Compoziție: 54% sauropode, 15% teropode, 31% ornitopode — deci 85% erbivore. Suprafețele sunt atât de dinoturbate încât pistele nu se mai pot individualiza: un drum bătut, nu o pistă.</li>
+    <li><strong>Boca do Chapim</strong>, la vreo 2 km nord de cap — situl osos clasic din secolul XIX: <em>Iguanodon</em>, <em>Astrodon (Pleurocoelus) valdensis</em>, <em>Baryonyx</em>, <em>Suchosaurus</em>, pterozauri, țestoase, pești.</li>
+    <li><strong>Pedreira do Avelino</strong> (Zambujal) — pistă de sauropod, Jurasic superior, descoperită în 1976.</li>
+    <li><strong>Pedreira da Ribeira do Cavalo</strong> (Zambujal) — teropode și sauropode, Jurasic mediu.</li>
+    <li><strong>Praia do Cavalo</strong>, la sud de Lagosteiros — teropod mare, Jurasic superior.</li>
+  </ul>
+
+  <h4>Cercetarea e în curs, nu încheiată</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Situl e activ științific. Echipa condusă de Silvério D. Figueiredo publică constant: în 2021, cele 614 urme de la Areia do Mastro; în 2022, două mulaje naturale de ornitopod atribuite <em>Caririchnium</em> isp., care extind distribuția icnogenului în Iberia; în 2023, resturi de sauropode din Fm. Papo-Seco — dinți, vertebre articulate, coastă cervicală, atribuite unui titanozauriform nedeterminat; în noiembrie 2025, treisprezece urme de teropode în bancul bazal al Fm. Papo-Seco la Boca do Chapim, în două morfotipuri, <strong>primele plantigrade cu amprentă de călcâi pătrată</strong> din zonă.</p>
+
+  <h4>Ce este, mecanic, o urmă</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>O adâncitură într-un strat, făcută de o greutate care a apăsat noroi moale; noroiul s-a uscat, s-a litificat, iar mișcarea scoarței a ridicat suprafața și a înclinat-o. Piatra a venit cu semnul deja imprimat în ea, cu o sută patruzeci și cinci de milioane de ani înainte ca cineva să-l poată vedea.</p>
+  <p class="pull">Un os e o dovadă de moarte: un animal a murit acolo și a fost acoperit. O urmă e o dovadă de viață: un animal trecea pe acolo, în mișcare, într-o anumită direcție, cu o anumită viteză, într-o anumită după-amiază.</p>
+  <p>Icnologia e singura ramură a paleontologiei care studiază <strong>comportament</strong>, nu anatomie. Exact asta e valoarea sitului de la Pedra da Mua: cele șapte piste subparalele nu spun <em>ce</em> erau animalele, ci <em>ce făceau</em> — mergeau împreună. Cea dintâi dovadă europeană de comportament gregar la sauropode nu vine dintr-un os; vine din faptul că șapte animale tinere au mers alături, pe un noroi, și noroiul s-a întărit.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Nota de teren care contează: ca să vezi urmele ai nevoie de <strong>lumină razantă</strong> — dimineață devreme sau seara târziu. La amiază dispar vizual: fără umbră, relieful lor se anulează. De aceea lipsesc din majoritatea albumelor.</p>
+</template>
+
+<template data-story="treceri">
+  <h4>Preistoria</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Studiul de referință este Silvério Figueiredo &amp; José Carvalho, „Subsídios para a Pré-História do Cabo Espichel", <em>Setúbal Arqueológica</em> 15 (2014), 47–60. Centro Português de Geo-História e Pré-História a identificat <strong>optsprezece situri arheologice</strong> pe promontoriu, față de șapte cunoscute în 1994.</p>
+  <ul>
+    <li><strong>Paleolitic inferior, mijlociu și superior:</strong> Areias do Mastro, Aguncheiras (cu un vârf musterian în cuarț și cuarțit), Ribeira dos Caixeiros, Boca do Chapim nord și sud, Lagosteiros, Chã dos Navegantes, Forte da Baralha.</li>
+    <li><strong>Mezolitic și neolitic:</strong> Alto da Fonte Nova — microindustrie litică și ceramică modelată manual.</li>
+  </ul>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Industriile sunt dominant pe <strong>cuarț</strong>, iar siturile se află pe plaje pleistocene înălțate la 50–90 m: oamenii au locuit exact pe terasele pe care tectonica le ridicase din mare.</p>
+  <p><span class="m m-f" title="Fapt probabil, dintr-o singură sursă secundară, neverificat independent">F?</span>Afirmația că din mileniile VI–V î.Hr. ar exista la Espichel resturi ceramice și osteologice care atestă un „univers spiritual" e slab susținută.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Nu există niciun sanctuar pre-creștin documentat arheologic pe capul propriu-zis.</strong> Asta e limita fermă a oricărei speculații de continuitate.</p>
+
+  <h4>Epoca romană: un loc unde corăbiile stăteau</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>55% din cepurile de ancoră din plumb identificate pe coasta portugheză provin din zona Cabo Espichel.</strong> Sónia Bombico, „Arqueologia Subaquática Romana em Portugal" (2011), confirmă: din vreo 100 de cepuri de ancoră din apele portugheze, două zone de concentrație — Cabo Espichel și Berlengas — sunt definite ca <em>amplas áreas de fundeadouro</em>, vaste zone de ancoraj. Amforele acoperă <em>„um amplo espectro cronológico"</em>, din ibero-punic până în epoca lusitană.</p>
+  <p>Traducerea e simplă: la Espichel corăbiile <strong>stăteau</strong>. Ancorele lăsate acolo, pierdute în masă, spun că promontoriul era un loc unde se aștepta vântul, mareea, lumina.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>La Sesimbra a fost descoperită în 2007 o fabrică romană de prelucrare a peștelui, pe Avenida da Liberdade.</p>
+
+  <h4>Numele antic</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Sursa antică este <strong>Strabon, <em>Geografia</em> III.3.1</strong> — nu Ptolemeu, nu Pliniu, nu Mela:</p>
+  <blockquote>„Now if we again begin at the Sacred Cape, following the coast in the other direction, namely, towards the Tagus River, there is first a gulf, then a promontory, <strong>Barbarium</strong>, and near it the mouths of the Tagus."</blockquote>
+  <p>Forma greacă: <strong>Βαρβάριον ἄκρον</strong>. Geografia internă a pasajului e decisivă: promontoriul e plasat imediat înainte de gurile Tejo-ului, venind dinspre Capul Sacru. Espichel e la vreo 25 km sud de bara Tejo-ului, Sines la vreo 100 km — ordinea lui Strabon favorizează net Espichel. Literatura portugheză enumeră pentru Espichel trei nume: <em>Ákra Barbárion</em> la Strabon, <em>Cêmpsico</em> la Avienus, <em>Azóia</em> în epoca islamică.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Forma „Promontorium Barbaricum" e greșită — <em>Barbaricum</em> e alt concept, teritoriile de dincolo de <em>limes</em>. Corect: <strong>Barbarium</strong>. Și nu există nicio sursă care să identifice <em>Barbarium</em> cu Cabo Sines: identificarea cu Espichel e consensuală.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><span class="m m-d" title="Dispută reală între specialiști">D</span>Al doilea strat: Avienus, <em>Ora Maritima</em> (sec. IV d.Hr., compilând un periplu massaliot mult mai vechi), versul ~179: <em>„tum Cempsicum / iugum intumescit"</em>. Identificarea <em>Cempsicum iugum</em> cu Arrábida/Espichel e propusă de istoriografia locală, dar nu e certă textual.</p>
+
+  <h4>Un cap fără templu, la Strabon</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Nu despre Espichel, ci despre <em>Promontorium Sacrum</em> — azi Cabo de São Vicente — Strabon scrie în <em>Geografia</em> III.1.4, citându-l pe Artemidoros și respingându-l pe Ephoros:</p>
+  <blockquote>„…there is neither a temple of his to be seen on the cape (as Ephorus wrongly states), nor an altar… only <strong>stones in many spots, lying in groups of three or four</strong>, which in accordance with a native custom are turned round by those who visit the place…"</blockquote>
+  <p>Contrastul cu Espichel e factual și merită notat ca atare: <strong>acolo nu s-a construit nimic; aici s-a construit tot</strong> — capelă, biserică, două aripi de case, apeduct, teatru.</p>
+
+  <h4>Epoca islamică</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Azóia</strong>, satul cel mai apropiat de cap, vine din arabul <em>az-zāwiya</em> — schit, colț de rugăciune, mormânt de om sfânt; un așezământ cu dublă funcție, religioasă și de supraveghere costieră. <strong>Arrábida</strong> vine din arabul <em>ar-rābiṭa</em>, „convento fortificado para guardar fronteira" — un <em>ribat</em>, mănăstire-fortăreață de frontieră.</p>
+  <p><span class="m m-f" title="Fapt probabil, dintr-o singură sursă secundară, neverificat independent">F?</span>În secolele IX–X apar pe litoral <em>morábitos</em> și <em>rábitas</em>, construcții cubice cu acoperire semisferică numite și <em>cubas</em>. Monede arabe din secolul XII descoperite la Lapa do Fumo par depuneri votive. Ermida da Memória reproduce, ca arhitectură, tipologia <em>cubei</em> — plan pătrat, cupolă contracurbată.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Cucerirea creștină a regiunii se petrece în 1147; foralul lui D. Sancho I e din 1201, iar forma <em>Sesimbria</em> e atestată atunci.</p>
+</template>
+
+<template data-story="hartii">
+  <h4>Cea dintâi hârtie</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Aprilie 1366</strong>: o înregistrare din cancelaria lui D. Pedro I menționează <em>„romeiros de Azeitão que vão a Santa Maria do Cabo"</em> — deci un pelerinaj deja constituit, cu rută și nume consacrat. Ziua diferă între surse, 12 sau 14 aprilie; anul e ferm.</p>
+  <p><span class="m m-t" title="Ce s-a păstrat prin tradiție — povestire, nu document">T</span>Data pe care o dă povestirea pentru arătare este <strong>~1410</strong>.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Această dată nu se poate susține documentar: cinstirea e atestată cu patruzeci și patru de ani mai devreme. Concluzia cercetării (Pato 2007/2008; Roque &amp; Forte 2018) e că 1410 e o dată etiologică, dată cu atribuire mai târziu.</p>
+  <p class="pull">Povestirea nu explică începutul cinstirii, fiindcă e mai nouă decât el. Ce s-a văzut acolo nu se cântărește cu documente; ce se poate urmări în documente e altceva — cum a fost povestită întâmplarea, de cine și când.</p>
+
+  <h4>Cronologia medievală</h4>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>An</th><th>Ce se petrece</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1366</strong></td><td>Prima mențiune: pelerini din Azeitão la <em>Santa Maria do Cabo</em></td></tr>
+      <tr><td><strong>1390</strong></td><td>D. João I acordă <em>Comenda de Sesimbra</em> lui Diogo Mendes de Vasconcelos</td></tr>
+      <tr><td><strong>1414</strong></td><td>Donație către carmeliții din Lisabona; ermida e numită <em>Santa Maria do Cabo</em> / <em>Santa Maria da Pedra de Mua</em>, descrisă ca <em>local de romagem e grande devoção</em>. Carmeliții abandonează, invocând clima și izolarea</td></tr>
+      <tr><td><strong>18 nov. 1428</strong></td><td>A doua donație, către dominicanii de la S. Domingos de Benfica; abandonează și ei, <em>„protestando pela sua saude, por causa do rigor do clima, e asperesa do Logar"</em></td></tr>
+      <tr><td><strong>1430</strong></td><td>Organizarea celui dintâi <em>círio</em> în sistem de <em>giro</em></td></tr>
+      <tr><td><strong>1432</strong></td><td>Instituirea Confrariei de Nossa Senhora do Cabo (statute aprobate abia în 1672)</td></tr>
+      <tr><td><strong>1491 / 1495</strong></td><td>Se construiește o biserică nouă, <em>„feita pelos Povos das Freguezias do Termo"</em></td></tr>
+      <tr><td><strong>1514</strong></td><td>Maestrul Ordinului Santiago, în vizitație, comandă retabule noi</td></tr>
+      <tr><td><strong>1550</strong></td><td><em>Padroado</em>-ul — dreptul apusean de patronat regal — trece la Casa dos Duques de Aveiro</td></tr>
+      <tr><td><strong>1640 →</strong></td><td>După Restaurație, <em>padroado</em>-ul trece la Casa do Infantado</td></tr>
+    </tbody>
+  </table></div>
+  <p>Detaliul cu <strong>cele două ordine care au primit locul și apoi au plecat</strong> merită reținut: carmeliții și dominicanii, oameni deprinși cu asprimea, au cedat în fața climei. Locul a rămas al mirenilor — ceea ce explică de ce cinstirea de la Espichel a fost, până la capăt, organizată de obști, nu de cler.</p>
+
+  <h4>Cele trei versiuni scrise</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>(a) Frei Agostinho de Santa Maria, <em>Santuário Mariano</em>, tomul II, Lisabona, 1707</strong> — cea dintâi consemnare tipărită. Descoperitorii sunt <em>„alguns homes da Caparica"</em>, doar de pe un mal al Tejo-ului. Aici apare episodul animalului:</p>
+  <blockquote>„afirmão que a Senhora apparecèra na praya que lhe fica em baixo da mesma penha […] &amp; que apparecèra sobre <strong>hũa jumentinha</strong>, &amp; que esta subira pela rocha assima, &amp; que ao subir hia firmando as mãos, &amp; os pès na mesma rocha, <strong>deixando impressos nella os vestigios das mãos, &amp; pès</strong>"</blockquote>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>(b) Frei Cláudio da Conceição, <em>Memória da Prodigiosa Imagem de Nossa Senhora do Cabo</em>, Lisabona, Impressão Régia, 1817</strong> — versiunea cu doi martori: un bătrân din <strong>Alcabideche</strong>, pe malul de nord, și o femeie <em>„de idade já bem avançada"</em> din <strong>Caparica</strong>, pe malul de sud, amândoi văzând în vis <em>„uma luz sempre fixa sobre o Promontório do Cabo"</em>. Autorul însuși aseamănă lumina cu rugul din Madian, <em>„que ardia sem se consummir"</em>. Femeia din Caparica ajunge prima; bărbatul ajunge după și <em>„vê acordado, o que gozou dormindo"</em> — vede treaz ce a avut în somn.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>(c) Manuscrisul BNP atribuit lui Francisco Ildefonso dos Santos, c. 1857</strong> — consemnează explicit ambele tradiții și e sursa primară pentru majoritatea detaliilor instituționale.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Nu se spune „doi bătrâni". Nu sunt doi bărbați: unul e un țăran <em>saloio</em> din Alcabideche, celălalt e o femeie în vârstă din Caparica. Iar versiunea din 1707 nu-i are deloc.</p>
+  <p>Versiunea din 1817 dă câte un martor fiecărui mal al Tejo-ului, ceea ce corespunde geografiei celor două <em>círios</em> — Caparica la sud, Termo/Saloios la nord. Atât se poate spune din documente.</p>
+
+  <h4>Un tipar cunoscut în Iberia medievală</h4>
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>În Iberia medievală, multe locuri de închinare au început la fel, iar William A. Christian Jr. a descris tiparul: un om simplu, uneori călăuzit de un animal, găsește un chip ascuns; chipul nu se lasă mutat și se întoarce la locul găsirii; capela se ridică acolo unde a ales el, nu unde ar fi fost mai comod; urmează legământul obștii și praznicul anual. La Espichel se regăsesc aproape toate motivele, inclusiv varianta cu doi descoperitori umili din două localități diferite.</p>
+
+  <h4>Numele animalului, în acte</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><em>„Mua"</em> este forma arhaică portugheză pentru <em>mula</em> — catârcă, măgăriță. De aici titulatura alternativă <strong>Nossa Senhora da Pedra da Mua</strong>, folosită în documente până în 1428. Urmele sunt icnofosile reale, cunoscute și interpretate local din secolul XV sau mai devreme.</p>
+</template>
+
+<template data-story="simetrii">
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>Povestirea așa cum a fost tipărită în 1817 are o simetrie pe care nimeni nu pare s-o fi căutat — și care se vede cel mai bine dacă o așezi în coloane.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Perechea</th><th>Cum apare în text</th></tr></thead>
+    <tbody>
+      <tr><td>mare ↔ uscat</td><td>arătarea se petrece jos, în apă, și trece pe pământ</td></tr>
+      <tr><td>jos ↔ sus</td><td>urcarea peretelui</td></tr>
+      <tr><td>somn ↔ veghe</td><td><em>„vê acordado, o que gozou dormindo"</em></td></tr>
+      <tr><td>malul de nord ↔ malul de sud</td><td>Alcabideche ↔ Caparica</td></tr>
+      <tr><td>bărbat ↔ femeie</td><td>țăranul <em>saloio</em> ↔ femeia în vârstă din Caparica</td></tr>
+      <tr><td>sălbatic ↔ domestic</td><td>oceanul ↔ animalul de povară</td></tr>
+      <tr><td>o clipă ↔ ce rămâne</td><td>pasul unui animal ↔ piatra</td></tr>
+    </tbody>
+  </table></div>
+  <p>Animalul le traversează pe toate: e domestic, dar urcă un perete; vine de jos și merge sus; e o trecere de o clipă, care lasă însă ceva ce rămâne. E elementul care poate ocupa amândouă pozițiile fiecărei perechi — și de aceea, într-un text, face legătura între ele.</p>
+  <p>Al treilea loc din povestire e capul însuși: pământul care nu e nici malul de nord, nici cel de sud, ci capătul amândurora. Cei doi martori pleacă din două locuri diferite și se întâlnesc acolo.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>O notă de graniță, ca să nu se amestece două lucruri: ce se cinstește în povestire e urma animalului care a purtat-o pe Maica Domnului. Ce e în piatră, ca material, e o icnofosilă de sauropod. Sunt două propoziții despre lucruri diferite și nu se scriu în aceeași frază.</p>
+</template>
+
+<template data-story="animalul">
+  <p>Animalul umil care duce ce e sfânt nu e o noutate a povestirii de la Espichel. E deja o temă în Evanghelii.</p>
+  <div class="scriptura">
+    La fuga în Egipt, iconografia răsăriteană o arată pe Maica Domnului purtată pe măgar, cu Pruncul în brațe, iar Iosif mergând pe jos alături.
+    <cite>Matei 2, 13–15</cite>
+  </div>
+  <div class="scriptura">
+    Iar la intrarea în Ierusalim, Domnul intră în cetate șezând pe mânzul asinei — ziua pe care o prăznuim ca Duminica Floriilor.
+    <cite>Matei 21, 1–11 · Zaharia 9, 9</cite>
+  </div>
+  <p>Puntea se sprijină pe asin, și e cinstit să se spună că pe asin se sprijină: în povestirea de la Espichel animalul e altul. Textul tipărit în 1707 zice <em>jumentinha</em>, măgăriță; toponimul zice <em>mua</em>, catârcă.</p>
+
+  <h4>Ce este o catârcă</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Un hibrid între măgar și iapă. Stearpă — nu lasă urmași. Animal domestic de povară, adică, prin definiție, cea care poartă. Nu e cal și nu e măgar; e animalul pe care omul îl face pentru drumurile grele, și pe care natura nu îl continuă.</p>
+  <p>Ce a rămas în povestire e semnul greutății pe care animalul o ducea. Animalul urca încărcat, și adânciturile din perete sunt, în povestire, urma acelei încărcături.</p>
+  <p class="pull">Semnul rămas în piatră nu e al Celei purtate, ci al animalului care a purtat-o.</p>
+
+  <h4>Numele animalului, în hârtii și în faianță</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Titulatura <strong>Santa Maria da Pedra de Mua</strong> apare în actele de donație din <strong>1414</strong> și <strong>1428</strong>. Adică numele animalului stă în documente cu aproape trei secole înainte de cea dintâi carte tipărită despre povestire — un lucru rar și util: povestirea circula cu mult înainte de a fi așternută pe hârtie.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>În Ermida da Memória, al treilea dintre cele zece panouri de azulejos (c. 1750–1758) o înfățișează pe Maica Domnului urcând stânca pe catârcă, <strong>cu urmele animalului desenate pe faleză</strong> ca parte a scenei. Nu e un detaliu de fundal: urmele sunt zugrăvite anume.</p>
+</template>
+
+<template data-story="urma">
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Termenul tehnic pentru o formă de corp omenesc sau de animal rămasă într-o rocă este <em>petrosomatoglif</em>. Instrumentul e simplu și n-are nevoie de nicio judecată de valoare: o urmă nu <em>reprezintă</em> ceva — a fost <em>cauzată</em> de ceva. Nu seamănă; atestă.</p>
+  <p class="pull">Semnul acesta nu l-a făcut nicio mână omenească.</p>
+  <p>În creștinism sunt trei locuri în care un asemenea semn a fost cinstit, și fiecare merită spus cu onestitatea lui cu tot.</p>
+
+  <h4>Muntele Măslinilor</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><span class="m m-d" title="Dispută reală între specialiști">D</span>Capela Înălțării adăpostește „Ascension Rock", cu urma piciorului Mântuitorului. Tradiția vorbește de <strong>două</strong> urme; cea stângă a fost mutată în Evul Mediu la al-Aqṣā, cea dreaptă a rămas.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Detaliul critic, spus sec, fiindcă nu slăbește nimic, ci dă greutate: cea mai veche descriere detaliată e a episcopului franc <strong>Arculf</strong>, pe la 680, transmisă de Adomnán — și el descrie urmele <em>„plainly and clearly impressed in the dust, inside a railing"</em>, adică <strong>în praf, înăuntrul unui grilaj, nu în piatră</strong>. E mărturie primară și istorie textuală reală: obiectul cinstit s-a mutat în piatră pe măsură ce întâmplarea a fost repovestită.</p>
+
+  <h4>Domine Quo Vadis</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Pe Via Appia, biserica poartă numele întrebării Apostolului Petru și păstrează o lespede cu urme cinstite ca ale Mântuitorului.</p>
+
+  <h4>Mont Saint-Michel</h4>
+  <p><span class="m m-t" title="Ce s-a păstrat prin tradiție — povestire, nu document">T</span><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Arătarea Arhanghelului către <strong>Aubert, episcop de Avranches</strong>, în anul 708; oratoriul e sfințit la 16 octombrie 709. După două ezitări ale episcopului, Arhanghelul i-ar fi apăsat degetul în cap, lăsându-i o urmă în craniu — iar <strong>craniul perforat se păstrează la bazilica Saint-Gervais din Avranches</strong>.</p>
+  <p><span class="m m-d" title="Dispută reală între specialiști">D</span>Se citează adesea explicația unei trepanații. Se poate spune, dar numită ce este: o conjectură modernă, nesusținută de sursă. Pagina asta nu poate refuza ca o icnofosilă să conteze împotriva a ceea ce se cinstește la Espichel și, în același timp, să accepte ca o trepanație ipotetică să conteze împotriva a ceea ce se cinstește la Avranches.</p>
+
+  <h4>Ce sunt, de fapt, semnele acestea</h4>
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>Nu au fost niciodată dovezi. Au fost <strong>însemnări</strong> — felul în care oamenii au legat de un loc anume amintirea a ceva ce li s-a spus că s-a petrecut acolo. Un semn care nu poate fi mutat ține locul pe loc: nu se mai poate muta nici pomenirea.</p>
+  <p>Iar <em>Ermida da Memória</em>, ridicată pe buza falezei exact deasupra urmelor, poartă numele acesta în chiar titulatura ei: capela pomenirii. E o însemnare a locului, nu o dovadă a lui.</p>
+</template>
+
+<template data-story="cartea">
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>Sfântul Vasile cel Mare, în omiliile la Facere, privește făpturile ca lucru al lui Dumnezeu și ne învață că se pot citi. Sfântul Maxim Mărturisitorul vorbește despre rațiunile lucrurilor (<em>Ambigua</em> 7 și 41): fiecare făptură își are rostul pus în ea, iar cine îl vede nu-l vede în locul Celui ce a făcut-o, ci prin ea. Iar Apostolul Pavel scrie romanilor că cele nevăzute ale lui Dumnezeu se văd, de la zidirea lumii, înțelegându-se din făpturi (Romani 1, 20).</p>
+  <p class="pull">Făpturile se pot citi — dar citirea rămâne lucrare omenească. Se poate îndrepta, fără ca lucrul citit să înceteze a fi ce era.</p>
+  <p>Ce trăiește pe faleza asta se citește de vreo două sute de ani, și încă nu s-a terminat de citit.</p>
+
+  <h4>Două plante poartă numele capului</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong><em>Euphorbia pedroi</em></strong> — endemică Parcului Natural Arrábida, distribuită între Cabo Espichel și Sesimbra, pe versanți de faleze calcaroase expuse spre sud, pe soluri incipiente sau în fisuri de rocă, sub ceață regulată și vânturi puternice. Arbust sub-suculent de până la doi metri. Pe lista roșie IUCN: <strong>vulnerabilă</strong>. Numele popular portughez: <em>trovisco-do-espichel</em>. Este singurul membru al secțiunii sale nativ în Europa.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong><em>Convolvulus fernandesii</em></strong> — endemică Portugaliei, pe lista roșie IUCN <strong>în pericol</strong>. Numele popular: <em>corriola-do-espichel</em>.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Matoralul caracteristic: <em>Quercus coccifera</em> (carrasco), <em>Quercus faginea</em>, măslin sălbatic. În parcul natural sunt înregistrate <strong>treizeci de specii de orhidee</strong>.</p>
+  <p><span class="m m-f" title="Fapt probabil, dintr-o singură sursă secundară, neverificat independent">F?</span><em>Juniperus turbinata</em> și <em>Arbutus unedo</em> sunt tipice matagalului Arrábidei, dar neconfirmate punctual la Espichel. Smochinul de lângă ziduri e observație de teren, fără confirmare documentară.</p>
+
+  <h4>Păsările</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Andorinhão-real</strong> (<em>Tachymarptis melba</em>) e singura specie descrisă explicit ca nidificantă pe faleze — <em>„nidifica nas zonas mais inacessíveis da costa escarpada"</em>. <strong>Șoimul călător</strong> (<em>Falco peregrinus</em>) e rezident, observat în zboruri de vânătoare, dar sursele nu confirmă explicit cuibărirea. Frecvente: cagarra (<em>Calonectris borealis</em>), gaivota-argêntea, corvo-marinho-de-crista, pardela-balear, ganso-patola. Terestre: <em>Galerida cristata</em>, <em>Phoenicurus phoenicurus</em>, <em>Saxicola rubetra</em>. Perioada optimă de observație: martie–aprilie și septembrie–noiembrie.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Berzele albe <strong>nu</strong> cuibăresc pe falezele de la Espichel — fenomenul celebru al berzelor de faleză e la <strong>Cabo Sardão</strong>, în sud-vestul Alentejo-ului. Nu apar nici gralha-de-bico-vermelho, nici grifonul.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Parcul în ansamblu numără 213 vertebrate: 8 amfibieni, 16 reptile, 154 păsări, 35 mamifere. Emblematice sunt acvila lui Bonelli și bufnița mare (<em>Bubo bubo</em>).</p>
+
+  <h4>Cetaceele</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Zona dintre Cabo da Roca și Cabo Espichel e culoar de trecere pentru balena comună (<em>Balaenoptera physalus</em>), cașalot, orci, balene-pilot, delfinul comun, delfinul lui Risso și delfinul dungat. Explicația e ecologică: <strong>canionul submarin al Lisabonei</strong>, la Meco, aduce apele adânci foarte aproape de coastă. Monitorizarea se face prin proiectul CETASEE.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Populația rezidentă de <strong>roaz-corvineiro</strong> (<em>Tursiops truncatus</em>) din estuarul Sado numără vreo 30 de indivizi, cu <strong>șase pui născuți în 2023</strong> — record în vreo patruzeci de ani de monitorizare. E singura populație rezidentă din Portugalia și una dintre trei cunoscute în Europa. <span class="m m-f" title="Fapt probabil, dintr-o singură sursă secundară, neverificat independent">F?</span>Deplasarea lor până la Espichel nu e confirmată.</p>
+
+  <h4>Cum se citește</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Ca să vezi ce e scris în piatră, trebuie să vii la ora potrivită. Urmele au nevoie de <strong>lumină razantă</strong> — dimineață devreme sau seara târziu. La amiază nu se vede nimic: fără umbră, relieful se anulează și adânciturile dispar pentru ochi. Lucrul e acolo ori de câte ori te uiți; vederea lui depinde de cum stă lumina.</p>
+</template>
+
+<template data-story="frica">
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Faptul topografic, care nu e psihologie, ci măsurătoare: faleza e un prag, și e vertical. O sută treizeci–o sută patruzeci de metri, dintr-odată, nu treptat.</p>
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>Immanuel Kant a numit-o <strong>sublimul dinamic</strong>: natura ca putere care ne depășește fizic, dar pe care o putem privi dintr-un loc relativ sigur — și tocmai de aceea o putem privi. Fără acel loc sigur, nu e contemplare, e primejdie. Gaston Bachelard a scris despre verticalitate și despre „imensitatea intimă" — felul în care un spațiu fără margini încape, totuși, în cineva.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>O coincidență goală și frumoasă: Kant a publicat <em>Critica facultății de judecare</em> în <strong>1790</strong> — anul în care s-a aprins farul de la Espichel. Două răspunsuri de secol XVIII la imensitatea oceanului: unul o gândește, celălalt o semnalizează.</p>
+
+  <h4>Zidul din spate</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Ansamblul construit e un plan în <strong>U deschis spre est</strong> — spre uscat, spre partea din care veneau pelerinii — și <strong>închis spre vest</strong>, spre ocean, spre partea în care nu se merge. Biserica stă pe latura închisă, între curte și prăpastie.</p>
+  <p class="pull">Nu poți sta pe buza unei faleze deasupra Atlanticului dacă nu ai un zid în spate. Curtea nu e o piață. E o incintă.</p>
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>Iar imensitatea din față e exact motivul pentru care s-a venit acolo. Arhitectura de la Espichel nu ascunde marea și nu o încadrează ca pe un tablou: îi face loc, dar îți dă și un perete la spate.</p>
+
+  <h4>De ce urcau oamenii</h4>
+  <p>Merită spus limpede, fiindcă e ușor de uitat când privești fotografii: oamenii n-au urcat aici pentru priveliște. Au venit fiindcă aveau pe cineva pe mare.</p>
+</template>
+
+<template data-story="sate">
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><em>Círio</em> însemna la început <em>„tocha grande de cera"</em> — <strong>lumânarea mare</strong> pusă înaintea Maicii Domnului. Abia prin extensie cuvântul a ajuns să numească pelerinajul însuși. E cel mai bun cuvânt din tot materialul: ce se ducea acolo, an de an, era o lumânare.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Leite de Vasconcelos a observat că <strong>Tejo-ul e linia de demarcație</strong>: la nord de fluviu, círio-ul de la Nazaré; la sud, cel al Senhorei do Cabo. Amândouă mergeau din parohie în parohie.</p>
+
+  <h4>Cele opt lumânări</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>După manuscrisul din 1857: <strong>Monte da Caparica</strong> (cel mai vechi), <strong>do Termo / dos Saloios</strong>, Arrentela e Seixal, Almada, Lisboa, Palmela, vilas de Azeitão e Sesimbra, și termos destas vilas. Mai apar Setúbal și Coina.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Círio do Termo / dos Saloios</strong> a fost cel mai important și cel dintâi organizat ca <em>giro</em> din Portugalia. Fixat la <strong>26 de parohii</strong>, inițial vreo 30. Fiecare era datoare să suporte praznicul <strong>o dată la douăzeci și șase de ani</strong>: Alcabideche, Carnaxide, Tojalinho, S. Pedro de Sintra, Belas, Loures, Carnide, Barcarena, Lousa, Santo Antão do Tojal, Oeiras, Benfica, S. Domingos de Rana, S. João das Lampas, Montelavar, Rio de Mouro, Belém, Cascais, Odivelas, S. Martinho de Sintra, Almargem do Bispo, Santo Estêvão das Galés, Igreja Nova, Terrugem, Fanhões, Santa Maria și São Miguel de Sintra.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Abandonuri documentate: Santa Maria dos Olivais (o singură participare, 1704), Bucelas (1709), Unhos (1711), Arranhó (1716), Santo André de Mafra (1722). Când participau monarhii, se numea <em>Círio Real</em>; masa colectivă se numea <em>Círio do Bodo</em>.</p>
+  <p class="pull">Un om apuca rândul satului lui o dată, poate de două ori în viață. Nu era un drum pe care să-l repeți. Asta schimbă tot ce însemna drumul acela pentru un om.</p>
+
+  <h4>Când se urca</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>La început <strong>15 august</strong> — Adormirea Maicii Domnului. Apoi s-a mutat la <strong>8 septembrie</strong> — Nașterea Maicii Domnului. Astăzi se ține la finele lui septembrie. Traseul clasic traversa Tejo-ul între Belém și Porto Brandão, cu înnoptare în zona Charneca da Caparica.</p>
+
+  <h4>Rânduiala</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Plecarea, înainte de praznic. <strong>Trei ocoluri</strong> în jurul bisericii sau al crucii, la sosire. <em>Missa votiva</em> — misa de făgăduință — și procesiunea, cu muzica <em>gaiteiro</em>-ului.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong><em>Loas</em></strong> — catrene în <em>redondilha maior</em>, recitate de <strong><em>anjos</em></strong>: copii sub doisprezece ani, îmbrăcați după iconografia barocă a Arhanghelului Gavriil. Trebuiau să fie „imaculați", adică neîntinați, fiindcă erau <em>„a voz do povo"</em>, glasul poporului.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Predarea <em>insígnias</em> — steagul — către parohia următoare. Din <strong>1751</strong>, când parohia S. João Degolado da Terrugem a dăruit o <em>imagem peregrina</em>, steagul e însoțit de un chip purtat într-o <strong><em>berlinda</em></strong> procesională. Apoi <em>lavagem da cara</em>, rânduiala pentru cei aflați la primul drum; <em>arrematação das bandeiras</em>, licitația steagurilor; <em>bodo</em>, bailuri, <em>garraiadas</em>, teatru popular.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Natura legământului:</strong> <em>círios</em> sunt făgăduințe colective, nu devoțiune individuală. Obștea întreagă își asumă promisiunea <em>„ao longo de sucessivas gerações de romeiros"</em> — adesea născută din cererea de ocrotire împotriva calamităților naturale, a flagelurilor agricole sau a epidemiilor de ciumă.</p>
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>Victor Turner a arătat că pelerinajul e liber — spre deosebire de riturile de trecere, care sunt datorate; formula lui, <em>„the center out there"</em>, e din articolul din 1973, nu din cartea din 1978. La Espichel, ce s-a adăugat e că obștea și-a zidit propria rânduială în piatră, cu numele celor care au plătit săpate pe fațade.</p>
+
+  <h4>Cum stau lucrurile azi</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>1887</strong> — Círio dos Saloios încetează să mai urce la cap; predarea insignelor se face de atunci direct între parohii. Suspendări politice: <strong>1911–1925</strong> și <strong>1974–1978</strong>. În <strong>1979</strong> reia São Martinho de Sintra.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>La <strong>26 martie 2017</strong>, Loures reface efectiv pelerinajul pe jos până la cap, reluând un drum întrerupt în 1887. În același ciclu, Carnide a refuzat rândul — are cultul local al Nossei Senhora da Luz, mai puternic — iar rândul a trecut la <strong>Arranhó</strong>, revenită după abandonul din 1716, adică după <strong>301 ani</strong>.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Rămân active anual <em>círios</em> din <strong>Azóia, Palmela și Sesimbra</strong>. Cel din Palmela, la 15 august, organizat din 1822 de Sociedade Filarmónica Humanitária, păstrează <em>Cavalinho</em>-ul și licitația steagurilor.</p>
+</template>
+
+<template data-story="zidit">
+  <h4>Ermida da Memória</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Cel mai vechi element al ansamblului, din secolul XV, probabil existent la 1414, pe marginea falezei, marcând locul. Plan pătrat, cupolă oarbă contracurbată cu pinaclu — tipologia locală a <em>cubei</em>, aceeași familie de arhitectură cu <em>morábito</em>-urile de coastă.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Azulejos-urile dinăuntru <strong>nu</strong> sunt din secolul XV. Sunt din <strong>c. 1750–1758</strong>.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Zece panouri albastru-alb, cu legende în cartuș susținute de îngerași, narând în ordine: (1) visul celor doi; (2) întâlnirea lor pe drum; (3) <strong>urcarea stâncii pe catârcă, cu urmele animalului marcate pe faleză</strong>; (4) sosirea mulțimii; (5) construirea ermidei; (6) construirea primei biserici; (7) <em>arraial</em>-ul primitiv; (8) <em>„Dase princi[pi]o á magestoza Igr[ej]a […] no ano de 1707"</em>; (9) construirea hospedariilor; (10) intrarea <em>festeiros</em>-ilor în noul arraial.</p>
+  <p class="pull">Panoul 3 e piesa cea mai neobișnuită din tot dosarul: o reprezentare în ceramică, din secolul XVIII, a unei urme din piatră — înăuntrul unui monument ridicat pentru acea urmă, pe buza falezei care o conține.</p>
+  <p>Iar panourile 5–10 spun altceva, la fel de important: un ciclu care începe cu visul a doi oameni și se sfârșește cu casele ridicate de urmașii lor. Cinstirea a continuat în muncă.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>La intrare, două <em>figuras de convite</em>: <strong>São Francisco de Assis</strong> și <strong>Santo Antão</strong> — adică Sfântul Antonie cel Mare, care nu trebuie confundat cu Santo António de Lisboa din tabloul de la 1514. Pe fațada sudică, două panouri deteriorate cu romei și filacterul <em>„A saeculo non est auditum"</em> — „De veacuri nu s-a auzit" (Ioan 9, 32, despre vindecarea orbului din naștere).</p>
+
+  <h4>Biserica</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><em>Igreja de Nossa Senhora do Cabo</em>, construită <strong>1701–1707</strong>, <em>estilo chão</em> manierist cu accente baroce. <span class="m m-d" title="Dispută reală între specialiști">D</span>Atribuirea către arhitectul regal <strong>João Antunes</strong> e probabilă, dar contestată: Serrão &amp; Serrão notează că desenul nu are concepția erudită și barocizantă tipică lui Antunes, iar alternativa propusă e Padre Francisco Tinoco da Silva. Comanditari: D. Pedro II și/sau fiul său, infantele D. Francisco de Bragança.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Inscripția de deasupra portalului atribuie finanțarea credincioșilor:</p>
+  <blockquote>„NO ANNO DE 1701 SE COMEÇOV ESTA IGREJA DA SENHORA DO CABO <strong>DAS ESMOLAS DOS DEVOTOS</strong> EEM 16 DE IVLLO DE 1707 SE T[E]RSLADOV A SENHORA"</blockquote>
+  <p>Amândouă sunt adevărate și amândouă se văd în zid: milostenia credincioșilor, scrisă pe frontispiciu, și <em>padroado</em>-ul Casei do Infantado, în spatele căruia stă aurul brazilian.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Navă unică; pereți în marmură albă și roșie; patru capele laterale intercomunicante pe fiecare latură; <strong>zece retabule</strong> de <em>talha</em> policromă, executate 1718–1722 pe cheltuiala <em>círios</em>-urilor și reformulate în 1770 în registru baroc joanin; zece picturi în ulei cu scene din viața Maicii Domnului. <em>Capela-mor</em>: azulejos albastru-alb c. 1730, tribuna regală și retablu de <em>estilo nacional</em> cu armele regale.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Bolta: tema pictată în <strong>1740</strong> de <strong>Lourenço da Cunha</strong>, la comanda lui D. João V, și repictată în 1770 de José António Narciso, este <em>Assunção da Virgem</em> — ridicarea la cer a Maicii Domnului, așa cum o zugrăvește tradiția apuseană; nu e scena Adormirii din iconografia răsăriteană. La restaurarea din 2002 s-a confirmat că singura bandă intactă din pictura originală sunt figurile Virtuților de la baza bolții.</p>
+
+  <h4>Iconografia mării și chipul cinstit</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Bolta <em>capelei-mor</em> poartă o cartelă amplă cu firmament, coroană, <strong>stea în șase colțuri</strong> și inscripția <em>„AVE MARIS STELLA"</em>. Gravurile devoționale de epocă confirmă registrul maritim: <em>„N. S.ª do Cabo / Virgem Maria defendei dos prigos aos que navegaõ sobre Angras do Mar"</em>.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Chipul cinstit e o mică <strong>statuetă de lemn</strong>, lucrată simplu — <em>imagem</em>, cum îi spun sursele: forma obișnuită a cinstirii mariane în Apus. Descrierea din 1857: stă în picioare și ține Pruncul pe brațul stâng, unindu-L la piept cu mâna, în timp ce cu dreapta își prinde mantia. A fost păstrată în Ermida da Memória până la <strong>16 iulie 1707</strong>, când a fost mutată solemn în biserica nouă; astăzi stă în <em>trono</em>-ul retablului, într-o <em>maquineta</em> de argint dăruită de círio de Lisboa în 1680.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Tezaurul, inventariat în 1873: <em>ramo de jasmins</em> din briliante cu frunze de smarald și două coroane de aur cu briliante (D. José I); <em>ramo de brilhantes</em> și mantie brodată cu aur (D. Maria I); mantie albă; mantie albastră (D. Carlota Joaquina); argintărie liturgică. Se verifica la fiecare <em>círio</em> prin act notarial în parohia-gazdă — de unde zicala: <em>„eu sou como a Senhora do Cabo, tudo o que tenho, trago"</em>.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Nu e documentată o colecție supraviețuitoare de tablouri votive marinărești, comparabilă cu cea de la Nazaré. Sursele vorbesc de <em>ofertas e ex-votos</em> ca ansamblu, atât.</p>
+
+  <h4>Casele parohiilor</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Două aripi perpendiculare pe biserică, formând un plan în U deschis spre est, cu <em>cruzeiro</em> central. Construcția începe în <strong>1715</strong>, atinge dimensiunea actuală între 1745 și 1760 sub zidarul João Jorge, iar aripa de nord e prelungită în 1794 — de unde asimetria. Circa <strong>40 de <em>sobrados</em> și 39 de <em>lojas</em></strong>, cu arcade la parter; arhitectură vernaculară <em>saloia</em>, neobișnuită prin cele două niveluri. Inscripțiile de pe fațade atestă cine a plătit — de pildă <em>„CAZAS DO SÍRIO DA IRMANDADE DE LIXBOA"</em>.</p>
+  <p class="pull">Fiecare parohie și-a zidit casa ei în jurul curții. Nu e o mănăstire și nu e un palat: e un sat de sărbătoare al obștilor, în care intri pe poarta ta.</p>
+
+  <h4>Teatrul și apa</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Casa da Ópera</strong> — mic teatru cu decoruri, culise și cabine, comandat de círio de Lisboa în <strong>1770</strong>. A găzduit trupe europene, mai ales italiene. Azi în ruină. <span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Datarea „sfârșit de secol XIX", care apare pe site-uri turistice, e eronată.</p>
+  <p>Pelerinajul și spectacolul nu erau, în barocul portughez, două lucruri diferite.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Casa da Água</strong> — <em>mãe de água</em> de plan hexagonal, 1770, cu azulejos de la Fábrica de Belém reprezentând scene de pelerinaj; capătul unui apeduct de vreo <strong>2 km</strong> venind dinspre Azóia, integrat într-un <em>cercado</em> cu grădină, livadă și bazine. Atribuită probabil lui Mateus Vicente de Oliveira.</p>
+  <p>Promontoriul nu are apă. Tot ansamblul stă pe o conductă de doi kilometri, adusă din singurul sat din apropiere.</p>
+
+  <h4>Ordinele militare</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Legătura cu <strong>Ordem de Santiago</strong> e structurală: Sesimbra era comendă a Ordinului, iar ermida se afla pe pământul comendei — de aici puterea lui Diogo Mendes de Vasconcelos de a o dona în 1414 și 1428. <em>Visitações da Ordem de Santiago</em> consemnează sanctuarul primitiv. În 1514, Maestrul Ordinului comandă retabule noi, din care supraviețuiesc două table atribuite <strong>Mestre da Lourinhã</strong>: Santo António de Lisboa și São Tiago Maior.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Cu <strong>Ordem de Cristo</strong> nu există legătură instituțională documentată. Singura conexiune e biografică: João Antunes era arhitect al celor trei ordine.</p>
+</template>
+
+<template data-story="tinut">
+  <p>Dosarul de la Espichel e neobișnuit de transparent: aproape întotdeauna se știe cine a plătit și cine a ținut locul.</p>
+  <ul>
+    <li><strong>1414, 1428</strong> — Coroana dă locul în grija unor ordine călugărești. Amândouă renunță, invocând clima: <em>„protestando pela sua saude, por causa do rigor do clima, e asperesa do Logar"</em>. Oameni deprinși profesional cu asprimea au cedat în fața climei, iar locul a rămas fără nicio instituție care să-l țină — adică al mirenilor.</li>
+    <li><strong>sec. XV–XVII</strong> — administrarea trece la <strong>Câmara de Sesimbra</strong>, care întreține un ermitan. Bugetul e local.</li>
+    <li><strong>1430–1887</strong> — sistemul <em>círios</em>: 26 de parohii, rotație obligatorie, calendar, socoteli, predarea insignelor.</li>
+    <li><strong>1701–1707</strong> — biserica: milostenia credincioșilor scrisă pe frontispiciu, <em>padroado</em>-ul Casei do Infantado în spate, iar banii, în ultimă instanță, din aurul brazilian.</li>
+    <li><strong>1718–1722</strong> — retabulele, pe cheltuiala confreriilor, cu inscripții care spun care a plătit ce.</li>
+    <li><strong>1715–1794</strong> — casele de pelerini, aripă cu aripă, parohie cu parohie, cu numele pe fațadă.</li>
+    <li><strong>1770</strong> — teatrul, plătit de círio de Lisboa; apeductul, din același val.</li>
+    <li><strong>1807</strong> — jaful francez. <strong>1834</strong> — desființarea ordinelor. Fluxul se rupe.</li>
+    <li><strong>1964</strong> — <em>„o santuário está em ruína"</em>.</li>
+    <li><strong>2016–2022</strong> — statul caută din nou pe cineva care să-l țină, de data asta un concesionar privat, pe 52 de ani. Licitația rămâne fără ofertant în ianuarie 2022: singura propunere, exclusă.</li>
+  </ul>
+
+  <h4>Ctitorii</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>După Restaurația din 1640, <em>padroado</em>-ul e la <strong>Casa do Infantado</strong> — pivotul campaniei de construcție din secolul XVIII.</p>
+  <ul>
+    <li><strong>D. Pedro II</strong> — devot al Senhorei do Cabo, inițiator probabil al bisericii noi.</li>
+    <li><strong>D. João V</strong> — în 1740 comandă pictura bolții; dăruiește o <em>berlinda</em> cu Coroana Regală.</li>
+    <li><strong>D. José I</strong> — a fost <em>juiz da Irmandade</em>. Finanțează repictarea bolții din 1770 și <em>círio</em>-ul excepțional din același an: bijuterii pentru chipul cinstit, argintărie, paramente brodate de José Camanha, brodatorul casei regale, coride și <em>bodos</em> imense.</li>
+    <li><strong>D. Maria I</strong> — <em>círio</em>-ul din 1784, cel mai solemn din istorie.</li>
+    <li><strong>D. Carlota Joaquina</strong> — mantie albastră brodată cu aur. <strong>D. Carlos I</strong> — apartamente regale amenajate în aripa de nord.</li>
+  </ul>
+
+  <h4>Declinul</h4>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>An</th><th>Ce se petrece</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1755</strong></td><td>Cutremurul provoacă <em>„alguns danos"</em> în navă; <strong>pelerinajele nu se întrerup</strong></td></tr>
+      <tr><td><strong>1807</strong></td><td>Invaziile franceze: tezaurul e jefuit; plecarea curții în Brazilia rupe patronajul</td></tr>
+      <tr><td><strong>1834</strong></td><td>Extincția ordinelor religioase. Pinho Leal susține totuși în 1873 că devoțiunea <em>„não tem esfriado"</em></td></tr>
+      <tr><td><strong>1887</strong></td><td>Círio dos Saloios nu mai urcă la cap</td></tr>
+      <tr><td><strong>5 ian. 1950</strong></td><td>Decreto 37728: ansamblul e clasificat <strong>Imóvel de Interesse Público</strong></td></tr>
+      <tr><td><strong>29 nov. 1963</strong></td><td>Portaria 280: zonă <em>non aedificandi</em></td></tr>
+      <tr><td><strong>1964</strong></td><td>Misiunea Gulbenkian: <em>„o santuário está em ruína. Abandonado […] esquecido, ignorado e caindo aos bocados"</em></td></tr>
+      <tr><td><strong>1968</strong></td><td>Proiect de recuperare al echipei Francisco Keil do Amaral, executat sincopat</td></tr>
+      <tr><td><strong>1975–1995</strong></td><td>Ocupare de familii defavorizate; evacuare în 1995, uși și ferestre zidite</td></tr>
+      <tr><td><strong>1997–2001</strong></td><td>Protocol între Confrarie și stat; restaurarea bisericii</td></tr>
+      <tr><td><strong>2017</strong></td><td>Municipalitatea cumpără aripa de nord cu 321.000 €</td></tr>
+      <tr><td><strong>în curs</strong></td><td>Proiect municipal aprobat: 1,331 mil. € pentru corpul vest al aripii sud, Casa da Água, apeduct și accesibilități</td></tr>
+    </tbody>
+  </table></div>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Nu este <strong>Monumento Nacional</strong>. Este <em>Imóvel de Interesse Público</em>. Eroarea e frecventă în ghiduri.</p>
+  <p class="pull">În 1414 și 1428, două ordine călugărești au refuzat locul. În 2022, piața l-a refuzat la fel — aceleași motive, în limbaje diferite: e prea departe, prea expus, prea greu de întreținut.</p>
+  <p>Între cele două refuzuri sunt aproape șase secole în care locul a fost ținut în viață nu de o instituție, ci de cuvântul dat între sate. Când cuvântul s-a rupt — 1834 pentru ordine, 1887 pentru saloios — locul a intrat în ruină în mai puțin de un secol.</p>
+</template>
+
+<template data-story="marea">
+  <h4>Farul</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Date oficiale ale Autorității Maritime Naționale – Direcția de Faruri:</p>
+  <div class="tbl-wrap"><table>
+    <tbody>
+      <tr><td>Punere în funcțiune</td><td><strong>1790</strong></td></tr>
+      <tr><td>Înălțimea turnului</td><td><strong>32 m</strong> (turn hexagonal de zidărie)</td></tr>
+      <tr><td>Plan focal</td><td><strong>168 m</strong> deasupra nivelului mării</td></tr>
+      <tr><td>Caracteristică luminoasă</td><td><strong>Fl W 4s</strong> — 0,3 s lumină / 3,7 s eclipsă</td></tr>
+      <tr><td>Rază de vizibilitate</td><td><strong>26 mile nautice</strong> (~48 km)</td></tr>
+      <tr><td>Aparat optic</td><td>dioptric/catadioptric rotativ de ordinul IV, model mare (300 mm)</td></tr>
+      <tr><td>Urcare</td><td>135 de trepte de piatră + 15 de fier</td></tr>
+    </tbody>
+  </table></div>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Nu este „Fl(4) W 15s": cifra 4 din descrierile populare se referă la cele <strong>patru panouri optice</strong> montate pe aparatul rotativ, nu la un grup de patru sclipiri. Nu are 42 de mile nautice, cum scrie Wikipedia PT, ci 26. Și nu are „trei fulgerări la fiecare 12 secunde".</p>
+  <p><span class="m m-t" title="Ce s-a păstrat prin tradiție — povestire, nu document">T</span>Tradiția spune că <em>irmandade</em> de Nossa Senhora do Cabo ar fi instalat un <em>farolim</em> pe cap încă din <strong>1430</strong>. Nedocumentat primar.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>La <strong>1 februarie 1758</strong>, un alvará al lui D. José I, inspirat de Marquês de Pombal, face din faruri o organizație oficială de stat și comandă șase. Ordinea realizării: N.ª S.ª da Guia (1761), Cabo da Roca (1772), S. Julião, Bugio și Serra da Arrábida (1775), <strong>Cabo Espichel și Cabo Carvoeiro (1790)</strong>.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>În 1866, șaptesprezece <em>candeeiros de Argand</em> cu reflectoare parabolice, arzând <strong>ulei de măsline</strong>. În 1886, vapori de petrol. În 1926, electrificare prin motoare-generator. În 1947, aparat aeromaritim de ordinul IV. În 1980, racordare la rețeaua publică. În 1989, automatizare. Direcția de Faruri fusese creată la 23 mai 1924.</p>
+
+  <h4>Ce fel de reper e Espichel</h4>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Espichel <strong>nu</strong> era reper operațional pentru intrarea în bara Tejo-ului. Reperele efectiv folosite de piloți erau Ponta de Rana, Santa Marta/Ponta do Salmodo, Farolul da Guia și Fortaleza de São Julião da Barra; pericolele erau Cachopos — nord și sud — și Cabeça Seca (Bugio).</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Formularea corectă: Espichel e promontoriul sudic care încadrează aproximarea spre Lisabona și delimitează nordic golful Setúbal.</p>
+
+  <h4>Bătălia din 1180</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>29 iulie 1180</strong>, Regatul Portugaliei contra Califatului Almohad. Portughezii aveau <strong>nouă nave</strong> comerciale modificate militar; almohazii, <strong>zece galere</strong> mediteraneene. Amiralul almohad Gamim ben Mardanis a fost ucis, nava-amiral capturată, mai multe galere distruse sau capturate intacte. <strong>Portughezii nu au pierdut nicio navă.</strong> Este considerată cea dintâi bătălie navală din istoria Portugaliei. Tactica: concentrarea a două nave asupra unei singure galere, cu abordaj și luptă corp la corp. Urmarea: un raid de represalii asupra Ceutei, cu cinci-opt nave private licențiate.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Comandantul portughez este <strong>necunoscut</strong>. Nu a fost D. Fuas Roupinho: istoriografia modernă îl exclude explicit. Și nu există nicio bătălie napoleoniană „off Cape Espichel" — confuzia e cu Cape St. Vincent și Cape Spartel — nici bază de submarine.</p>
+
+  <h4>Fortificațiile</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Forte de São Domingos da Baralha</strong> — secolul XVII, început sub D. Afonso VI și finalizat sub D. Pedro II, lângă Praia da Baleeira, la 27 m deasupra mării, cu opt piese de artilerie. La 21 iunie 1808, forțele britanice, aliate, l-au atacat și neutralizat ca posibil punct de sprijin francez; soldații nu au opus rezistență, tunurile au fost aruncate în mare. În ruină de atunci.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>Forte de Nossa Senhora do Cabo</strong> — început în 1672, jumătate prăbușit până în 1796, restul demolat în 1802. <strong>Forte de São Teodósio da Ponta do Cavalo</strong> (Sesimbra) — început 1648, inaugurat 1652, inginer Sebastião Pereira de Frias; afectat de cutremurul din 1755; far instalat în 1895–96; <em>Imóvel de Interesse Público</em> din 1978.</p>
+
+  <h4>River Gurara, 1989</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span><strong>26 februarie 1989.</strong> Cargou nigerian, construit în 1980, pe ruta Coasta de Fildeș – Marea Britanie. Eșuat la câteva sute de metri de Cabo Espichel, s-a rupt în două: prova la vreo 200 m de coastă, la 30 m adâncime; pupa la vreo 100 m, la circa 20 m. Din <strong>48 de membri de echipaj, 27 au supraviețuit și 21 au murit</strong>. Salvările s-au făcut cu ajutorul fregatei <em>Hermenegildo Capelo</em>. Astăzi e un sit popular de scufundări; municipalitatea a marcat 25 de ani de la naufragiu și a pregătit un proiect de muzeu subacvatic.</p>
+
+  <h4>Firul luminii</h4>
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>Capul a primit lumină făcută de mână de om în <strong>1790</strong> — la aproape patru sute de ani după lumina pe care o pomenește povestirea, și la vreo trei sute șaizeci de ani după felinarul pe care tradiția, neverificată, îl atribuie confreriei. Mai întâi lumina din vis, apoi uleiul de măsline, apoi vaporii de petrol, apoi curentul electric.</p>
+</template>
+
+<template data-story="fosile">
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>Ce stă aici în serie este <strong>felul în care s-au citit semnele din piatră</strong> — nu ce s-a arătat sau nu pe o plajă.</p>
+  <p><span class="m m-t" title="Ce s-a păstrat prin tradiție — povestire, nu document">T</span>Adrienne Mayor a arătat că oamenii de dinaintea paleontologiei <strong>au observat corect fosilele</strong> și le-au citit cu mijloacele pe care le aveau: grifonul din craniile de <em>Protoceratops</em> din deșertul Gobi; „oasele de eroi" din megafauna terțiară; pasărea-tunet din tradițiile amerindiene.</p>
+
+  <h4>Corbul lui Noe</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Cazul clasic din istoria științei: urmele din <strong>Valea Connecticut</strong> erau numite local <em>„Noah's raven"</em> — corbul lui Noe. Numele era dat lespezii găsite de <strong>Pliny Moody la South Hadley, pe la 1801–1802</strong>, deci era în uz cu peste trei decenii înainte ca <strong>Edward Hitchcock</strong> să publice, în ianuarie 1836, în <em>American Journal of Science</em> 29(2): 307–340, articolul care le clasifica drept <em>Ornithichnites</em>, urme de păsări gigantice.</p>
+  <p>Hitchcock, el însuși pastor, a crezut până la capăt că sunt păsări. Un om de știință care observă corect și conchide greșit, cu toată onestitatea din lume.</p>
+
+  <h4>Paralele care nu se țin</h4>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>„Devil's Footprints" din Devon, februarie 1855 — urme de copită în zăpadă pe zeci de mile — este <strong>folclor modern documentat de presă, nu un caz de icnofosile</strong>. Nu se folosește ca paralelă paleontologică.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Cal Orck'o (Sucre, Bolivia) — perete cvasi-vertical cu piste de titanozauri, cel mai bogat sit de urme dintr-un singur aflorament din lume — nu are documentată o citire mitică pre-paleontologică. Se folosește doar ca analogie geologică. Iar „Barapasaurus" e un gen de sauropod indian, nu un sit de urme.</p>
+
+  <h4>De ce Espichel e cazul cel mai bine documentat</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Fiindcă aici stau, în același punct, cinci lucruri deodată: <strong>povestirea</strong>; <strong>toponimul derivat din ea</strong> (Pedra da Mua); <strong>monumentul datat</strong>, ridicat anume deasupra urmelor; <strong>reprezentarea lor vizuală</strong> (azulejos, c. 1750–1758); și <strong>atestarea documentară a titulaturii</strong> (Santa Maria da Pedra de Mua, 1414–1428). Foarte puține locuri din lume au toate cele cinci.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Nu se spune „cele mai vechi urme de dinozaur interpretate mitologic din lume". Sursa (Santos, Sá Caetano &amp; Pólvora, 2016) spune doar „secolul XV sau mai devreme". Formularea sigură: <strong>cel mai bine documentat caz european</strong>.</p>
+  <p class="pull">Cine a privit șirul acela de adâncituri a dedus corect că ceva greu a urcat pe acolo, apăsând. Ce anume le-a lăsat a spus-o paleontologia, patru secole mai târziu.</p>
+</template>
+
+<template data-story="nazare">
+  <h4>Povestirea</h4>
+  <p><span class="m m-t" title="Ce s-a păstrat prin tradiție — povestire, nu document">T</span><strong>14 septembrie 1182.</strong> Dom Fuas Roupinho, <em>alcaide</em> de Porto de Mós, vânează pe domeniul său un <strong>cerb</strong> care fuge spre marginea falezei. O <strong>ceață deasă urcă brusc dinspre mare</strong> și îl desparte de însoțitori. Calul galopează spre o prăpastie de vreo sută de metri deasupra țărmului stâncos. Zărind o grotă cu chipul Maicii Domnului, strigă <em>„Nossa Senhora, valei-me!"</em> — și calul se oprește pe buză. Locul se numește <strong>Bico do Milagre</strong>. Fuas poruncește să se ridice deasupra grotei o <strong>Ermida da Memória</strong>.</p>
+  <p><span class="m m-t" title="Ce s-a păstrat prin tradiție — povestire, nu document">T</span>Despre originea chipului, tradiția spune că a fost cioplit de Iosif tâmplarul la Nazaret și zugrăvit de <strong>Sfântul Apostol și Evanghelist Luca</strong> — tradiția Sfântului Luca drept cel dintâi care a zugrăvit chipul Maicii Domnului e vie și în Răsărit, unde ține de icoanele Hodighitria. Obiectul de la Nazaré este însă o sculptură în lemn, nu o icoană zugrăvită. Ar fi fost adus în Iberia după bătălia de la Guadalete (711) de călugărul Ciriaco/Romano și de regele Rodrigo, Romano rămânând pustnic într-o grotă de faleză până la moarte.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>În 1377, D. Fernando ridică un sanctuar mai mare pentru pelerini.</p>
+
+  <h4>Comparația</h4>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>Nazaré</th><th>Cabo Espichel</th></tr></thead>
+    <tbody>
+      <tr><td>Marginea verticală</td><td>faleză ~100 m</td><td>faleză ~130–140 m</td></tr>
+      <tr><td>Animalul</td><td><strong>cerbul</strong> care fuge + <strong>calul</strong> care se oprește</td><td><strong>catârca</strong> care poartă și urcă</td></tr>
+      <tr><td>Ceața</td><td>element central al povestirii</td><td>element real, constant</td></tr>
+      <tr><td>Monument pe punctul exact</td><td><strong>Ermida da Memória</strong></td><td><strong>Ermida da Memória</strong></td></tr>
+      <tr><td>Sanctuar mare, ulterior, mai în spate</td><td>da (1377, apoi barocul)</td><td>da (1701–1707)</td></tr>
+      <tr><td>Chip găsit, nu proclamat de ierarhie</td><td>da</td><td>da</td></tr>
+      <tr><td><strong>Semn material rămas</strong></td><td>—</td><td><strong>urmele în piatră</strong></td></tr>
+      <tr><td>Círio</td><td><em>N. S. da Nazaré</em>, la nord de Tejo</td><td><em>N. S. do Cabo</em>, la sud de Tejo</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Diferența esențială:</strong> la Nazaré, animalul <strong>salvează</strong>; la Espichel, animalul <strong>poartă</strong> și lasă semnul.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Cele două sanctuare au același nume pentru capela-memorial: <em>Ermida da Memória</em>. Amândouă marchează „punctul exact". Amândouă stau pe buza unei faleze. Iar Leite de Vasconcelos a observat că Tejo-ul e linia care împarte ariile celor două <em>círios</em>. Nu sunt două sanctuare, ci un sistem care împarte Estremadura.</p>
+
+  <h4>O confuzie frecventă</h4>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>D. Fuas Roupinho apare în folclor și ca amiralul victorios de la Cabo Espichel, 1180 — dar istoriografia modernă îl exclude explicit: <em>„Contrary to folklore that was created around Dom Fuas Roupinho, he was not present and did not participate in the Battle of Cape Espichel."</em> Comandantul portughez de la 1180 e necunoscut.</p>
+  <p><span class="m m-i" title="Citire, nu fapt">I</span>Faptul că folclorul a vrut ca <strong>același om</strong> să fie scăpat de la moarte pe o faleză la nord de Tejo și să biruie flota almohadă pe mare la sud e însă, în sine, o mărturie: oamenii percepeau cele două capuri ca pe un singur sistem, și au cusut-o cu un personaj.</p>
+</template>
+
+<template data-story="capete">
+  <p>Locurile cu care Espichel stă în serie — ce fel de loc e fiecare, și ce e altfel aici, ca istorie.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Loc</th><th>Ce e acolo</th><th>Ce e altfel aici, ca istorie</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sagres / Promontorium Sacrum</strong> (PT)</td><td>cap atlantic iberic, atestat textual în antichitate (Strabon III.1.4)</td><td>acolo <strong>nu s-a construit nimic</strong>; aici s-a construit tot</td></tr>
+      <tr><td><strong>Finisterre</strong> (Galicia)</td><td><em>finis terrae</em>, capăt de pelerinaj compostelan, apus</td><td><em>Ara Solis</em> e legendă modernă fără confirmare arheologică; ritualurile de azi sunt recente</td></tr>
+      <tr><td><strong>Cabo da Roca</strong> (PT)</td><td>punctul cel mai vestic al Europei continentale</td><td>turistic, fără sanctuar; versul <em>„onde a terra se acaba e o mar começa"</em> e gravat acolo, nu are legătură cu Espichel</td></tr>
+      <tr><td><strong>Land's End</strong> (Cornwall)</td><td>toponim de capăt de lume</td><td>fără cult documentat</td></tr>
+      <tr><td><strong>Sounion</strong> (Grecia)</td><td>templu construit pe promontoriu (Poseidon, c. 444–440 î.Hr., pe locul unui templu arhaic distrus de perși în 480 î.Hr.); sanctuar separat al Athenei Sounias la ~500 m NE</td><td>acolo e edificiu antic ridicat din temelii; aici, o capelă mică pe buza falezei, șase secole mai târziu</td></tr>
+      <tr><td><strong>Mont Saint-Michel</strong> (FR)</td><td>arătare din 708 și <strong>semn fizic păstrat</strong> — craniul perforat de la Avranches; abație</td><td>insulă, nu cap; o abație uriașă, nu un sat de case parohiale</td></tr>
+      <tr><td><strong>Notre-Dame de la Garde</strong> (Marsilia)</td><td>cinstire marină, cu <strong>colecție de ex-voto păstrată</strong></td><td>colină urbană; la Espichel o asemenea colecție nu e documentată</td></tr>
+      <tr><td><strong>Santa Maria di Leuca</strong> (IT)</td><td><em>de Finibus Terrae</em>, vârf de peninsulă</td><td>tradiția templului Minervei — nedovedită</td></tr>
+      <tr><td><strong>Nazaré</strong> (PT)</td><td>faleză, arătare, Ermida da Memória, círio</td><td>animalul salvează, nu lasă semn</td></tr>
+      <tr><td><strong>Sri Pada / Adam's Peak</strong> (Sri Lanka)</td><td>o scobitură naturală într-o stâncă la 2.304 m, revendicată de-a lungul secolelor de mai multe comunități; atestată de Marco Polo (c. 1292–93) și de Ibn Battuta, care a urcat în 1344</td><td>acolo revendicările s-au succedat între comunități; aici s-au suprapus două citiri ale aceleiași pietre, dinspre povestire spre paleontologie</td></tr>
+      <tr><td><strong>São Miguel da Mota</strong> (PT)</td><td>singura resacralizare în lanț documentată efectiv în Portugalia</td><td>nu e cap; e sanctuar interior</td></tr>
+      <tr><td><strong>Valea Connecticut</strong> (SUA)</td><td>urme de dinozaur citite ca „corbul lui Noe"</td><td>fără cult, fără monument</td></tr>
+      <tr><td><strong>Cal Orck'o</strong> (Bolivia)</td><td>perete cvasi-vertical cu piste de titanozauri, cel mai bogat aflorament din lume</td><td>fără citire pre-paleontologică documentată</td></tr>
+    </tbody>
+  </table></div>
+  <p class="pull">Din toată seria, numai aici stau în același punct povestirea, numele, monumentul, imaginea și documentul.</p>
+</template>
+
+<template data-story="cronologie">
+  <p>Aceleași fapte, într-un singur șir, fără comentariu.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Când</th><th>Ce</th></tr></thead>
+    <tbody>
+      <tr><td><strong>~149–143 Ma</strong></td><td>Tithonian. Sauropode juvenile trec în grup pe un noroi carbonatat → <strong>Pedra da Mua</strong></td></tr>
+      <tr><td><strong>~132–126 Ma</strong></td><td>Hauterivian. Teropode și ornitopode trec → <strong>Lagosteiros</strong> (Fm. das Ladeiras)</td></tr>
+      <tr><td><strong>~125 Ma</strong></td><td>Barremian inferior. <strong>614 urme</strong> la Praia da Areia do Mastro</td></tr>
+      <tr><td><strong>~17,5–16,5 Ma</strong></td><td>Primul impuls de deformare al Cadeiei da Arrábida</td></tr>
+      <tr><td><strong>~9–7 Ma</strong></td><td>Al doilea impuls. Stratele sunt ridicate și înclinate</td></tr>
+      <tr><td><strong>Pliocen</strong></td><td>Se formează „Plataforma do Cabo"</td></tr>
+      <tr><td><strong>~125.000 ani</strong></td><td>Platforma de 7 m de la Forte da Baralha (Eemian)</td></tr>
+      <tr><td><strong>Paleolitic–Neolitic</strong></td><td>18 situri arheologice; industrii pe cuarț, pe terase la 50–90 m</td></tr>
+      <tr><td><strong>~20 d.Hr.</strong></td><td>Strabon numește <em>Barbarium</em> (III.3.1)</td></tr>
+      <tr><td><strong>antichitate romană</strong></td><td>Ancoraj major: 55% din cepurile de ancoră de pe coasta portugheză</td></tr>
+      <tr><td><strong>sec. IX–XII</strong></td><td><em>az-zāwiya</em> la Azóia; <em>rābiṭa</em> pe coastă, de unde „Arrábida"</td></tr>
+      <tr><td><strong>1147</strong></td><td>Cucerirea creștină a regiunii</td></tr>
+      <tr><td><strong>29 iulie 1180</strong></td><td><strong>Bătălia de la Cabo Espichel</strong> — cea dintâi bătălie navală portugheză</td></tr>
+      <tr><td><strong>14 sept. 1182</strong></td><td>Minunea de la Nazaré (D. Fuas Roupinho), după tradiție</td></tr>
+      <tr><td><strong>1201</strong></td><td>Foralul lui D. Sancho I; forma <em>Sesimbria</em> atestată</td></tr>
+      <tr><td><strong>aprilie 1366</strong></td><td><strong>Prima atestare documentară a cinstirii</strong>: pelerini din Azeitão la <em>Santa Maria do Cabo</em></td></tr>
+      <tr><td><strong>1390</strong></td><td>Comenda de Sesimbra la Diogo Mendes de Vasconcelos</td></tr>
+      <tr><td><strong>~1410</strong></td><td>Data pe care o dă povestirea pentru arătare — nesusținută documentar</td></tr>
+      <tr><td><strong>1414</strong></td><td>Donație la carmeliți; <em>Santa Maria da Pedra de Mua</em>; ordinul renunță. Ermida da Memória probabil deja existentă</td></tr>
+      <tr><td><strong>18 nov. 1428</strong></td><td>Donație la dominicanii de la Benfica; renunță și ei</td></tr>
+      <tr><td><strong>1430</strong></td><td>Primul <em>círio</em> în sistem de <em>giro</em>; după tradiție, primul felinar pe cap</td></tr>
+      <tr><td><strong>1432</strong></td><td>Confraria de Nossa Senhora do Cabo</td></tr>
+      <tr><td><strong>sec. XV sau mai devreme</strong></td><td><strong>Urmele fosile sunt citite ca urme de catârcă</strong></td></tr>
+      <tr><td><strong>1491/1495</strong></td><td>Biserică nouă, construită de parohii</td></tr>
+      <tr><td><strong>1514</strong></td><td>Vizitația Ordinului Santiago comandă retabule (Mestre da Lourinhã)</td></tr>
+      <tr><td><strong>1550 · 1640</strong></td><td><em>Padroado</em> la Casa dos Duques de Aveiro; după Restaurație, la Casa do Infantado</td></tr>
+      <tr><td><strong>1672 · 1680</strong></td><td>Statutele Confrariei; <em>maquineta</em> de argint de la círio de Lisboa</td></tr>
+      <tr><td><strong>1701–1707</strong></td><td><strong>Biserica actuală</strong>. 16 iulie 1707: mutarea chipului cinstit</td></tr>
+      <tr><td><strong>1707</strong></td><td><em>Santuário Mariano</em> — cea dintâi consemnare tipărită a povestirii</td></tr>
+      <tr><td><strong>1715–1794</strong></td><td><strong>Casele parohiilor</strong>, aripă cu aripă</td></tr>
+      <tr><td><strong>1718–1722</strong></td><td>Retabulele, pe cheltuiala <em>círios</em>-urilor</td></tr>
+      <tr><td><strong>1740</strong></td><td>D. João V: bolta cu <em>Assunção da Virgem</em> (Lourenço da Cunha) + <em>berlinda</em></td></tr>
+      <tr><td><strong>1750–1758</strong></td><td><strong>Azulejos-urile din Ermida da Memória</strong> — reprezentarea urmelor</td></tr>
+      <tr><td><strong>1751</strong></td><td>Prima <em>imagem peregrina</em> (Terrugem)</td></tr>
+      <tr><td><strong>1 nov. 1755</strong></td><td>Cutremurul. La Setúbal, trei valuri de 6–17,5 m și peste 2.000 de morți din 11.842. La Espichel, <em>„alguns danos"</em>; pelerinajele continuă</td></tr>
+      <tr><td><strong>1 feb. 1758</strong></td><td>Alvará-ul lui D. José I: sistemul național de faruri</td></tr>
+      <tr><td><strong>1770</strong></td><td>Repictarea bolții; <strong>Casa da Ópera</strong>; <strong>Casa da Água</strong> și apeductul; <em>círio</em>-ul excepțional</td></tr>
+      <tr><td><strong>1784 · 1790</strong></td><td><em>Círio</em>-ul lui D. Maria I, cel mai solemn din istorie; <strong>farul intră în funcțiune</strong></td></tr>
+      <tr><td><strong>1807 · 1808</strong></td><td>Invazia franceză: tezaurul jefuit; britanicii neutralizează Forte da Baralha</td></tr>
+      <tr><td><strong>1817</strong></td><td>Frei Cláudio da Conceição — versiunea cu cei doi martori</td></tr>
+      <tr><td><strong>1834 · 1857 · 1873</strong></td><td>Extincția ordinelor; manuscrisul Santos; Pinho Leal inventariază tezaurul</td></tr>
+      <tr><td><strong>1866 · 1886 · 1926</strong></td><td>Farul: ulei de măsline, apoi vapori de petrol, apoi electricitate</td></tr>
+      <tr><td><strong>1887</strong></td><td><strong>Círio dos Saloios nu mai urcă la cap</strong></td></tr>
+      <tr><td><strong>1911–1925 · 1974–1978</strong></td><td>Suspendări ale <em>círios</em>-urilor</td></tr>
+      <tr><td><strong>5 ian. 1950</strong></td><td><strong>Imóvel de Interesse Público</strong> (Decreto 37728)</td></tr>
+      <tr><td><strong>1963 · 1964 · 1968</strong></td><td>Zonă <em>non aedificandi</em>; „o santuário está em ruína"; proiectul Keil do Amaral</td></tr>
+      <tr><td><strong>1969</strong></td><td>Cutremur Mw 7,9 (Horseshoe/Gorringe)</td></tr>
+      <tr><td><strong>1971</strong></td><td><strong>Prima expediție științifică la urmele de la Pedra da Mua</strong></td></tr>
+      <tr><td><strong>1976 · 1979</strong></td><td>Parque Natural da Arrábida; São Martinho de Sintra reia <em>círio</em>-ul</td></tr>
+      <tr><td><strong>26 feb. 1989</strong></td><td><strong>Naufragiul <em>River Gurara</em></strong> — 21 de morți. În același an, farul e automatizat</td></tr>
+      <tr><td><strong>1992–94</strong></td><td>Cartarea exhaustivă a icnotopului; <strong>Lockley, Meyer &amp; dos Santos</strong> — turma de sauropode juvenile</td></tr>
+      <tr><td><strong>7 mai 1997</strong></td><td><strong>Monumente Naturale</strong>: Pedra da Mua, Lagosteiros, Pedreira do Avelino</td></tr>
+      <tr><td><strong>1997–2001 · 1998 · 2005</strong></td><td>Restaurarea bisericii; Parcul Marin Prof. Luiz Saldanha; planul de ordenamento</td></tr>
+      <tr><td><strong>2014 · 2015 · 2016</strong></td><td>18 situri arheologice; filmul lui Carlos Sargedas; intrarea în REVIVE</td></tr>
+      <tr><td><strong>2017</strong></td><td>Municipalitatea cumpără aripa nord; <strong>Loures reface pelerinajul pe jos</strong></td></tr>
+      <tr><td><strong>2021 · ian. 2022</strong></td><td>614 urme la Areia do Mastro; licitația de concesiune rămâne fără ofertant</td></tr>
+      <tr><td><strong>2022–2023</strong></td><td><em>Caririchnium</em> isp.; titanozauriform nedeterminat în Fm. Papo-Seco</td></tr>
+      <tr><td><strong>sept. 2025</strong></td><td><strong>Arrábida — Rezervație a Biosferei UNESCO</strong></td></tr>
+      <tr><td><strong>nov. 2025</strong></td><td>13 urme de teropode, Fm. Papo-Seco (<em>Fossil Studies</em>)</td></tr>
+    </tbody>
+  </table></div>
+</template>
+
+<template data-story="limite">
+  <p class="pull">Identificarea urmelor spune ce le-a făcut și când s-au întipărit în piatră. Despre ce s-a arătat pe plaja de dedesubt, știința nu are nimic de spus — nici pentru, nici împotrivă.</p>
+
+  <h4>Golurile</h4>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span><strong>Nu există un cult pre-creștin dovedit la Espichel.</strong> Există preistorie — 18 situri. Există <em>zāwiya</em> la Azóia. Dar nu există nicio dovadă arheologică de sanctuar pe capul propriu-zis.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Se citează adesea, în legătură cu asta, scrisoarea Sfântului Grigorie cel Mare — Sfântul Grigorie Dialogul, papă al Romei, prăznuit la 12 martie — către Mellitus, iulie 601 (<em>Registrum Epistolarum</em> XI.56, reprodusă de Beda, <em>Historia Ecclesiastica</em> I.30):</p>
+  <blockquote>„the temples of the idols in that nation ought not to be destroyed; but let the idols that are in them be destroyed […] that the nation, seeing that their temples are not destroyed, may remove error from their hearts […] because he who endeavours to ascend to the highest place rises by degrees or steps, and not by leaps."</blockquote>
+  <p>Textul documentează o <strong>rânduială misionară</strong> despre clădiri și despre îngăduința ca poporul să vină mai departe la locurile cu care era obișnuit. Nu e o teorie și nu e un document despre Espichel. Nu se folosește ca dovadă aici.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span><strong>Sebastianism:</strong> nicio legătură documentată între mitul lui D. Sebastião și Espichel sau Sesimbra. Singura suprapunere e onomastică și accidentală. <strong>Camões, Pessoa, Almada Negreiros:</strong> nicio sursă care să-i lege de locul acesta.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Ce există literar: <strong>Sebastião da Gama</strong> (1924–1952), născut la Vila Nogueira de Azeitão, „poetul Arrábidei"; volumul <em>Serra-Mãe</em> (1945) e dedicat masivului al cărui capăt vestic e Espichel. Un poem care să numească explicit Espichelul nu e verificat. Ce există cinematografic: <em>Cabo Espichel: Em Terras de Um Mundo Perdido</em> (2015), regia Carlos Sargedas, premiat pentru regie la un festival din Serbia.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Nu e documentat niciun caz consistent de OZN-uri la Espichel. Nu există legende locale despre sirene sau comori: ce s-a păstrat în povestirile locului e legat de Maica Domnului.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span><strong>„Linia Sfântului Mihail"</strong> este clasificată drept pseudoștiință, iar nici Portugalia, nici Espichel nu figurează în lista ei canonică. Teoria a fost propusă de Jean Richer (1967) și extinsă de Julien Richer (1977); loxodroma de best-fit calculată de Luca Amendola dă 60,45°, cu deviație medie de ~14 km și maximă de 42 km pe 4.190 km — calcul privat, nepublicat academic, citat doar de Wikipedia, care clasifică teoria ca atare.</p>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span><strong>„Ara Solis" de la Finisterre</strong> — altar solar roman presupus: tradiție literară și turistică, fără confirmare arheologică.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Singura continuitate de sit documentată efectiv în Portugalia e la <strong>São Miguel da Mota</strong> (Alandroal): templul lui Endovélico, divinitate lusitană pre-romană, a fost înlocuit de o capelă creștină, devenită apoi moschee, apoi din nou creștină. E o substituție de sit, documentată — nu o aliniere geometrică.</p>
+
+  <h4>Erorile care circulă</h4>
+  <p>Toate afirmațiile de mai jos apar în presă, în ghiduri turistice sau în materiale mai vechi, și toate sunt false sau nesusținute.</p>
+  <ul>
+    <li>Stratele sunt „aproape verticale" → real: <strong>30–45°</strong>.</li>
+    <li>Cele două situri sunt separate de „~50 de milioane de ani" → real: <strong>~15–20 Ma</strong>.</li>
+    <li>„142–146 Ma" sau „140–130 Ma" pentru Pedra da Mua → real: <strong>~149–143 Ma</strong> (Tithonian).</li>
+    <li>„Formação de Espichel" → real: <strong>„Calcários, grés e margas de Espichel"</strong> (J3Es). „Camadas de Alcobaça" și „Formação de Guincho" sunt unități din alte sectoare.</li>
+    <li>Lagosteiros = Barremian sau Aptian → real: <strong>Hauterivian</strong>.</li>
+    <li>Geoparc UNESCO sau Patrimoniu Mondial la Arrábida → real: doar <strong>Rezervație a Biosferei</strong>, din septembrie 2025.</li>
+    <li>„Serra do Risco — cea mai înaltă faleză calcaroasă din Europa" → nesusținut.</li>
+    <li>1410 ca dată istorică a arătării → cinstirea e atestată din <strong>1366</strong>.</li>
+    <li>„Doi bătrâni" → un bărbat din Alcabideche și <strong>o femeie</strong> în vârstă din Caparica; versiunea din 1707 nu-i are deloc.</li>
+    <li><strong>Monumento Nacional</strong> → real: <em>Imóvel de Interesse Público</em>, Decreto 37728 din 5 ianuarie 1950.</li>
+    <li>Casa da Ópera „de la sfârșitul secolului XIX" → real: <strong>1770</strong>. Azulejos-urile „din secolul XV" → real: <strong>c. 1750–1758</strong>.</li>
+    <li>João Antunes ca arhitect sigur → atribuire <strong>contestată</strong>.</li>
+    <li>Colecție de ex-voto-uri marinărești păstrată → nedocumentată.</li>
+    <li>„Promontorium Barbaricum" → real: <strong>Barbarium</strong>. Legătură cu Ordem de Cristo → real: <strong>Ordem de Santiago</strong>.</li>
+    <li>Legenda pescarului „Zimbra" ca origine a numelui Sesimbra → invenție literară de secol XX, a lui Gentil Marques. Boca do Inferno e la <strong>Cascais</strong>.</li>
+    <li>„Fl(4) W 15s" sau „trei fulgerări la 12 secunde" → real: <strong>Fl W 4s</strong>. „42 de mile nautice" → real: <strong>26</strong>.</li>
+    <li>Espichel ca reper de intrare în bara Tejo-ului → reperele reale erau Guia, S. Julião, Bugio.</li>
+    <li>D. Fuas Roupinho la bătălia din 1180 → comandantul e <strong>necunoscut</strong>. Nu există bătălie napoleoniană și nici bază de submarine.</li>
+    <li>Cifre de tsunami pentru Sesimbra → nu există date locale publicate; cele disponibile sunt pentru <strong>Setúbal</strong>.</li>
+    <li>Berze albe cuibărind pe falezele Espichel → acela e <strong>Cabo Sardão</strong>. Grifon și gralha-de-bico-vermelho → nu apar în liste.</li>
+    <li>„Cele mai vechi urme de dinozaur interpretate mitologic din lume" → sursa spune doar „secolul XV sau mai devreme". Formularea sigură: <strong>cel mai bine documentat caz european</strong>.</li>
+  </ul>
+
+  <h4>Ce rămâne de verificat</h4>
+  <ul>
+    <li>Textul integral al publicației primare Lockley, Meyer &amp; dos Santos 1994 (<em>Gaia</em> 10: 27–35) — singura sursă peer-reviewed pentru turma de sauropode.</li>
+    <li>Cifrele detaliate de la Pedra da Mua (40 de piste, 8 niveluri, ~700 de urme, vitezele), care vin dintr-o singură sursă secundară.</li>
+    <li>Helena Barbas Pato, <em>Nossa Senhora do Cabo: Um Culto nas Terras do Fim</em> (2008) — pare a fi lucrarea de referință pentru cinstirea locului.</li>
+    <li>Fișa IBA „Cabo Espichel", generată dinamic: codul, suprafața și speciile-criteriu rămân neverificate.</li>
+    <li>Transportul public până la cap — de verificat direct la operator.</li>
+    <li>Un poem al lui Sebastião da Gama care să numească explicit Espichelul.</li>
+    <li>Panourile deteriorate de pe fațada sudică a ermidei, cu filacterul <em>„A saeculo non est auditum"</em> — merită fotografiate și descifrate pe teren.</li>
+    <li>Cifrele de tsunami pentru Sesimbra din 1755, în arhivele parohiale sau în răspunsurile la <em>inquérito pombalino</em>.</li>
+    <li>Catalogul de speologie al celor opt grote — probabil cel mai neexploatat fir din tot dosarul.</li>
+  </ul>
+</template>
+
+<template data-story="practic">
+  <h4>Drumul</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Cincisprezece kilometri de Sesimbra. <span class="m m-f" title="Fapt probabil, dintr-o singură sursă secundară, neverificat independent">F?</span>Acces rutier prin EN379. Satul cel mai apropiat e <strong>Azóia</strong>.</p>
+  <p><span class="m m-f" title="Fapt probabil, dintr-o singură sursă secundară, neverificat independent">F?</span><strong>Transportul public nu e confirmat până la capul propriu-zis.</strong> Linia 3536 (Cacilhas–Sesimbra) e axa principală spre Sesimbra, dar nu deservește capul. Verifică orarul operatorului înainte să te bazezi pe el.</p>
+
+  <h4>Program</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Incinta sanctuarului e <em>„Sempre Aberto"</em>. Biserica: <strong>marți–duminică, 10:00–13:30 și 14:30–17:00</strong>, intrare gratuită. Traseele cu urme de dinozauri sunt vizitabile. Farul se vizitează în programul Autorității Maritime — miercuri după-amiaza, cu vizite programate contra unei taxe mici; urcarea înseamnă 135 de trepte de piatră și încă 15 de fier.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Casele parohiilor: nu există confirmare că interioarele sunt vizitabile; sunt programate lucrări de recuperare.</p>
+
+  <h4>Lumina</h4>
+  <p class="pull">La amiază nu vezi nimic. Urmele au nevoie de lumină razantă ca să existe pentru ochi.</p>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Dimineață devreme sau seara târziu — atunci umbra lungă scoate relieful adânciturilor. La amiază, lipsa umbrei le anulează complet. Asta explică de ce urmele lipsesc din majoritatea albumelor.</p>
+
+  <h4>Siguranța</h4>
+  <p><span class="m m-x" title="Afirmație care circulă și care este falsă sau nesusținută">✗</span>Nu există informație oficială despre parcare și nu există un avertisment oficial specific pentru falezele de la Espichel — riscul falezelor e gestionat la nivel național. Riscul e însă real: presa a relatat căderea unui vehicul în zonă, cu intervenție cu elicopter.</p>
+
+  <h4>Marea</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Scufundări: vizibilitate 5–15 m; apa de la ~14 °C iarna la ~20 °C vara; imersiuni de la 5–10 m la peste 30 m, practicabile aproape tot anul datorită orientării sudice adăpostite a golfului Sesimbra. Există ieșire dedicată la epava <em>River Gurara</em>.</p>
+  <p><span class="m m-f" title="Fapt probabil, dintr-o singură sursă secundară, neverificat independent">F?</span>Surf la Praia da Foz: <em>reef break</em>, fund nisipos cu stânci, valuri de 1–2 m, sezon optim decembrie–februarie, swell din vest, vânt din est-sud-est. <em>Nortada</em>, vântul de nord dominant estival, e un fenomen real pe litoralul portughez, dar fără confirmare instrumentală specifică aici. IPMA menține o pagină de prognoză costieră dedicată „Cabo Espichel".</p>
+
+  <h4>Când e locul viu</h4>
+  <p><span class="m m-f" title="Fapt documentat, verificat în cel puțin o sursă primară sau științifică">F</span>Praznicul se ține azi la finele lui septembrie, iar <em>círios</em>-urile din <strong>Azóia, Palmela și Sesimbra</strong> sunt încă active anual. Cine vrea să vadă locul viu, nu doar zidit, vine atunci.</p>
+</template>
+
+
+
+<script>
+(function(){
+  var M = ["a","materie"], C = ["b","credință"], P = ["c","paralelă"], L = ["c","limite"], R = ["c","practic"];
+  var RAW = [
+    ["perete", "Peretele de la capătul pământului", "Cum s-a făcut faleza care ține semnul", M,
+     "Africa împinge spre Europa cu câțiva milimetri pe an. De aceea peretele e înclinat — și de aceea se vede ce e scris pe el."],
+    ["semnul", "Semnul din piatră", "Ce sunt adânciturile din perete", M,
+     "Un os e o dovadă de moarte. O urmă e o dovadă de viață."],
+    ["treceri", "Cine a trecut pe aici înainte", "Optsprezece așezări preistorice, ancorele romane, un schit islamic", M,
+     "Mai mult de jumătate din cepurile de ancoră romane găsite pe toată coasta Portugaliei sunt de aici: corăbiile stăteau și așteptau."],
+    ["hartii", "Ce spun hârtiile", "1366, 1410 și cele trei versiuni scrise ale povestirii", M,
+     "Cea mai veche hârtie care pomenește pelerinajul e cu patruzeci și patru de ani mai veche decât data pe care o dă povestirea."],
+    ["simetrii", "Simetriile povestirii", "Ce se așază în perechi, în textul tipărit la 1817", M,
+     "Malul de nord și malul de sud, somnul și trezia, marea și uscatul: o simetrie pe care nimeni nu pare s-o fi căutat."],
+    ["animalul", "Animalul care poartă", "Măgarul din Egipt, asinul din Ierusalim, catârca din povestire", C,
+     "Semnul rămas în piatră nu e al Celei purtate, ci al animalului care a purtat-o."],
+    ["urma", "Urma în piatră în tradiția creștină", "Muntele Măslinilor, Domine Quo Vadis, Mont Saint-Michel", C,
+     "Semnul acesta nu l-a făcut nicio mână omenească."],
+    ["cartea", "Cartea naturii", "Sfântul Vasile cel Mare, Sfântul Maxim Mărturisitorul — și ce trăiește pe faleza asta", C,
+     "O plantă care nu crește nicăieri altundeva pe lume decât pe falezele dintre Espichel și Sesimbra."],
+    ["frica", "Frica și frumusețea", "Ce simte omul pe buza unei faleze de o sută treizeci de metri", C,
+     "Ca să poți sta cu fața spre nemărginire, ai nevoie de un zid în spate."],
+    ["sate", "Cele douăzeci și șase de sate", "Círios — făgăduința dusă din neam în neam", M,
+     "Un om apuca rândul satului lui o dată, poate de două ori în viață."],
+    ["zidit", "Ce au zidit oamenii aici", "Ermida da Memória, biserica, casele parohiilor, apeductul, teatrul", M,
+     "La capătul unui cap pustiu, la cincisprezece kilometri de cel mai apropiat oraș, s-a ridicat până și un teatru."],
+    ["tinut", "Cine a ținut locul", "Șase secole de întreținere, și cine a plătit-o", M,
+     "În 1414 și 1428, două ordine călugărești au primit locul în dar și au plecat amândouă. În ianuarie 2022, licitația a rămas fără ofertant."],
+    ["marea", "Capul și marea", "Farul, fortificațiile, bătălia din 1180, epava din 1989", M,
+     "Capul a primit lumină făcută de mână de om în 1790 — la aproape patru sute de ani după lumina din povestire."],
+    ["fosile", "Cum au fost citite fosilele înainte de paleontologie", "Corbul lui Noe, pastorul Hitchcock și urmele din Valea Connecticut", M,
+     "Cu treizeci de ani înainte de orice articol științific, lespezii aceleia i se spunea „corbul lui Noe”."],
+    ["nazare", "Nazaré", "Celălalt sanctuar de pe faleză, la nord de Tejo", P,
+     "Două faleze, două sanctuare, aceeași Ermida da Memória."],
+    ["capete", "Capete de lume", "Alte promontorii, alte pietre cu semn", P,
+     "Din toată seria, numai aici stau în același punct povestirea, numele, monumentul, imaginea și documentul."],
+    ["cronologie", "Cronologia, într-o singură coloană", "De la un noroi carbonatat la un șantier în curs", M,
+     "O sută patruzeci și cinci de milioane de ani, șase secole de urcuș și un proiect de restaurare, într-un singur șir."],
+    ["limite", "Ce nu se poate spune", "Golurile, erorile care circulă, și ce rămâne de verificat", L,
+     "Nu sunt documentate — niciuna. Un dosar cinstit își spune și golurile."],
+    ["practic", "Dacă mergi acolo", "Ore, drum, lumină, mare — verificat în 2026", R,
+     "La amiază nu vezi nimic. Urmele au nevoie de lumină razantă ca să existe pentru ochi."]
+  ];
+  var TILES = RAW.map(function(r){
+    return { k: r[0], t: r[1], s: r[2], kind: r[3][0], kindLabel: r[3][1], lead: r[4] };
+  });
+
+  var ARROW = '<svg width="13" height="9" viewBox="0 0 13 9" fill="none" aria-hidden="true"><path d="M1 4.5h10M8 1.5l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var grid = document.getElementById('grid');
+  var html = '';
+  for (var i = 0; i < TILES.length; i++) {
+    var d = TILES[i];
+    html += '<button class="tile" type="button" data-story="' + d.k + '" data-title="' + d.t + '" data-sub="' + d.s + '">' +
+      '<span class="top"><span class="num">' + (i + 1) + '</span>' +
+      '<span class="kind ' + d.kind + '">' + d.kindLabel + '</span></span>' +
+      '<h3>' + d.t + '</h3>' +
+      '<p class="subtitle">' + d.s + '</p>' +
+      '<p class="lead">' + d.lead + '</p>' +
+      '<span class="cta">Citește' + ARROW + '</span>' +
+      '</button>';
+  }
+  grid.innerHTML = html;
+
+  var modal = document.getElementById('modal');
+  var mTitle = document.getElementById('modal-title');
+  var mSub = document.getElementById('modal-sub');
+  var mBody = document.getElementById('modal-body');
+  var closeBtn = document.getElementById('modal-close');
+  var lastFocus = null;
+  var native = typeof modal.showModal === 'function';
+
+  function open(btn){
+    var tpl = document.querySelector('template[data-story="' + btn.getAttribute('data-story') + '"]');
+    if (!tpl) return;
+    mTitle.textContent = btn.getAttribute('data-title');
+    mSub.textContent = btn.getAttribute('data-sub');
+    mBody.innerHTML = '';
+    mBody.appendChild(tpl.content.cloneNode(true));
+    mBody.scrollTop = 0;
+    lastFocus = btn;
+    document.body.classList.add('locked');
+    document.documentElement.classList.add('locked');
+    if (native) { modal.showModal(); } else { modal.setAttribute('open',''); }
+    closeBtn.focus();
+  }
+
+  function close(){
+    if (native) { if (modal.open) modal.close(); } else { modal.removeAttribute('open'); cleanup(); }
+  }
+
+  function cleanup(){
+    document.body.classList.remove('locked');
+    document.documentElement.classList.remove('locked');
+    if (lastFocus) { lastFocus.focus(); lastFocus = null; }
+  }
+
+  grid.addEventListener('click', function(e){
+    var btn = e.target.closest ? e.target.closest('.tile') : null;
+    if (btn) open(btn);
+  });
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('close', cleanup);
+  modal.addEventListener('click', function(e){ if (e.target === modal) close(); });
+  if (!native) {
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && modal.hasAttribute('open')) close();
+    });
+  }
+})();
+</script>
+</body>
+</html>
