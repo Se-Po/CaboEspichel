@@ -53,6 +53,12 @@ Fiecare afirmație e marcată, iar distincția e ținută peste tot:
 
 ## Versiuni
 
+### 0.0.4
+
+Două schimbări, în două commit-uri. `11a7043` aduce README-ul rescris pe versiuni și cele patru capturi ale întregii pagini din `docs/` — desktop și telefon, în temă luminoasă și întunecată.
+
+Commit-ul pe care stă eticheta scoate din secțiunea „Ce nu se poate spune" mențiunea despre sebastianism. Rămân neatinse corectura despre Camões, Pessoa și Almada Negreiros, cea despre versul gravat la Cabo da Roca, și poetul Sebastião da Gama — care e altceva decât mitul, chiar dacă poartă același nume.
+
 ### 0.0.3 — `126612a`
 
 Fereastra modală ține minte poziția de citire. Un cartonaș deschis prima oară pornește de sus; unul deschis a doua oară se redeschide exact unde a rămas cititorul, cât ține vizita.
@@ -69,7 +75,7 @@ Corectura despre versul *„onde a terra se acaba e o mar começa"* — gravat l
 
 Prima publicare: pagina autonomă, cu povestea centrală, nouăsprezece secțiuni în ferestre modale și marcajele de fiabilitate pe fiecare afirmație.
 
-<sub>Fiecare versiune are eticheta ei în depozit: `v0.0.1`, `v0.0.2`, `v0.0.3`.</sub>
+<sub>Fiecare versiune are eticheta ei în depozit: `v0.0.1`, `v0.0.2`, `v0.0.3`, `v0.0.4`.</sub>
 
 ## Despre sanctuar
 
