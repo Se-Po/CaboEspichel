@@ -941,19 +941,34 @@ footer strong{color:var(--muted);font-weight:600}
   var closeBtn = document.getElementById('modal-close');
   var lastFocus = null;
   var native = typeof modal.showModal === 'function';
+  var positions = {};
+  var currentKey = null;
+
+  function isOpen(){ return native ? modal.open : modal.hasAttribute('open'); }
+
+  // Poziția se reține pe măsură ce se derulează, nu la închidere: când modala se
+  // închide, <dialog> e deja ascuns, iar scrollTop al unui element ascuns se
+  // citește 0. Așa se acoperă toate căile de închidere — X, Esc, clic pe fundal.
+  mBody.addEventListener('scroll', function(){
+    if (currentKey && isOpen()) { positions[currentKey] = mBody.scrollTop; }
+  });
 
   function open(btn){
-    var tpl = document.querySelector('template[data-story="' + btn.getAttribute('data-story') + '"]');
+    var key = btn.getAttribute('data-story');
+    var tpl = document.querySelector('template[data-story="' + key + '"]');
     if (!tpl) return;
+    currentKey = null;
     mTitle.textContent = btn.getAttribute('data-title');
     mSub.textContent = btn.getAttribute('data-sub');
     mBody.innerHTML = '';
     mBody.appendChild(tpl.content.cloneNode(true));
-    mBody.scrollTop = 0;
     lastFocus = btn;
     document.body.classList.add('locked');
     document.documentElement.classList.add('locked');
     if (native) { modal.showModal(); } else { modal.setAttribute('open',''); }
+    void mBody.scrollHeight;
+    mBody.scrollTop = positions[key] || 0;
+    currentKey = key;
     closeBtn.focus();
   }
 
