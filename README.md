@@ -6,8 +6,8 @@ Pagina nu alege între cele două propoziții: ele răspund la întrebări difer
 
 <table>
   <tr>
-    <td width="50%" valign="top"><img src="docs/desktop-luminos.png" alt="Pagina întreagă, pe desktop"></td>
-    <td width="50%" valign="top"><img src="docs/mobil-luminos.png" alt="Pagina întreagă, pe telefon, tăiată în trei coloane"></td>
+    <td width="50%" valign="top"><img src="docs/0.0.5/desktop-luminos.png" alt="Pagina întreagă, pe desktop"></td>
+    <td width="50%" valign="top"><img src="docs/0.0.5/mobil-luminos.png" alt="Pagina întreagă, pe telefon, tăiată în trei coloane"></td>
   </tr>
   <tr>
     <td align="center"><sub><b>Desktop</b> — 1280px, pagina întreagă</sub></td>
@@ -19,8 +19,8 @@ Pagina nu alege între cele două propoziții: ele răspund la întrebări difer
   <summary>Aceleași două, în tema întunecată</summary>
   <table>
     <tr>
-      <td width="50%" valign="top"><img src="docs/desktop-intunecat.png" alt="Pagina întreagă, pe desktop, tema întunecată"></td>
-      <td width="50%" valign="top"><img src="docs/mobil-intunecat.png" alt="Pagina întreagă, pe telefon, tema întunecată"></td>
+      <td width="50%" valign="top"><img src="docs/0.0.5/desktop-intunecat.png" alt="Pagina întreagă, pe desktop, tema întunecată"></td>
+      <td width="50%" valign="top"><img src="docs/0.0.5/mobil-intunecat.png" alt="Pagina întreagă, pe telefon, tema întunecată"></td>
     </tr>
   </table>
   <p><sub>Pagina urmează tema sistemului: nu are comutator, se schimbă singură după <code>prefers-color-scheme</code>.</sub></p>
@@ -53,11 +53,27 @@ Fiecare afirmație e marcată, iar distincția e ținută peste tot:
 
 ## Versiuni
 
-### 0.0.4
+O versiune pentru fiecare push, nu pentru fiecare commit. Intrarea unei versiuni explică toate commit-urile cuprinse în acel push.
 
-Două schimbări, în două commit-uri. `11a7043` aduce README-ul rescris pe versiuni și cele patru capturi ale întregii pagini din `docs/` — desktop și telefon, în temă luminoasă și întunecată.
+Aici stau numai versiunile care există deja în depozit: lista nu anunță niciodată o versiune neîmpinsă. Intrarea unei versiuni noi intră chiar în commit-ul cu care e împinsă.
 
-Commit-ul pe care stă eticheta scoate din secțiunea „Ce nu se poate spune" mențiunea despre sebastianism. Rămân neatinse corectura despre Camões, Pessoa și Almada Negreiros, cea despre versul gravat la Cabo da Roca, și poetul Sebastião da Gama — care e altceva decât mitul, chiar dacă poartă același nume.
+Capturile stau în `docs/<versiune>/`. Un set nou se face doar când pagina chiar arată altfel — o versiune care schimbă numai comportamentul sau documentația trimite la setul versiunii dinainte și spune asta. Se generează cu `tools/capturi.ps1`.
+
+### 0.0.5
+
+Pagina își spune versiunea. În subsol, ultimul rând, un colofon despărțit printr-o linie subțire: versiunea, data ei și o legătură către depozit. Cine are o copie a fișierului știe acum ce ține în mână. Legătura nu încarcă nimic de pe alt server, deci pagina rămâne autonomă.
+
+`tools/capturi.ps1` face cele patru capturi pentru orice versiune. Nu i se dă înălțimea paginii: capturează pe o fereastră mai înaltă decât pagina și taie de la bază rândurile care sunt integral fundal. Tema se forțează, altfel Chromium preia tema sistemului și toate capturile ies la fel.
+
+Capturile s-au mutat în foldere pe versiuni, `docs/<versiune>/`. Refăcute cu instrumentul, cele de la 0.0.4 au ieșit mai scurte decât cele dinainte: vechea captură de telefon fusese făcută pe o înălțime măsurată cu bara de derulare vizibilă și avea la coadă vreo o mie șase sute de pixeli goi.
+
+Tot aici s-au scris în README regulile de versionare de mai sus, iar intrarea 0.0.4 a fost completată cu al doilea hash, care lipsea.
+
+### 0.0.4 — `11a7043`, `f24a954`
+
+`11a7043` aduce README-ul rescris pe versiuni și primele capturi ale întregii pagini — desktop și telefon, în temă luminoasă și întunecată.
+
+`f24a954` scoate din secțiunea „Ce nu se poate spune" mențiunea despre sebastianism. Rămân neatinse corectura despre Camões, Pessoa și Almada Negreiros, cea despre versul gravat la Cabo da Roca, și poetul Sebastião da Gama — care e altceva decât mitul, chiar dacă poartă același nume.
 
 ### 0.0.3 — `126612a`
 
@@ -75,7 +91,7 @@ Corectura despre versul *„onde a terra se acaba e o mar começa"* — gravat l
 
 Prima publicare: pagina autonomă, cu povestea centrală, nouăsprezece secțiuni în ferestre modale și marcajele de fiabilitate pe fiecare afirmație.
 
-<sub>Fiecare versiune are eticheta ei în depozit: `v0.0.1`, `v0.0.2`, `v0.0.3`, `v0.0.4`.</sub>
+<sub>Fiecare versiune are eticheta ei în depozit: `v0.0.1`, `v0.0.2`, `v0.0.3`, `v0.0.4`, `v0.0.5`.</sub>
 
 ## Despre sanctuar
 
