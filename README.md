@@ -57,9 +57,27 @@ O versiune pentru fiecare push, nu pentru fiecare commit. Intrarea unei versiuni
 
 Aici stau numai versiunile care există deja în depozit: lista nu anunță niciodată o versiune neîmpinsă. Intrarea unei versiuni noi intră chiar în commit-ul cu care e împinsă.
 
+Fiecare commit are și el un număr, de forma **`0.0.N.xx`**: versiunea push-ului, plus poziția commit-ului în interiorul ei, începând de la `01`. Contorul repornește la fiecare versiune. Numărul stă în subiectul commit-ului și în lista de mai jos; nu se pun etichete git pe commit-uri, ca lista de etichete să rămână a versiunilor.
+
+Commit-urile de până la 0.0.5 au fost împinse înainte ca schema să existe, așa că numerele lor sunt consemnate numai aici. Subiectele lor nu se rescriu: asta ar schimba toate hash-urile și ar rupe etichetele deja publicate. Prefixul în subiect începe de la commit-urile de după.
+
+Intrarea celei mai noi versiuni poartă doar numerele: hash-urile i se adaugă la versiunea următoare, fiindcă un commit nu-și poate cunoaște dinainte propriul hash. Numărul, în schimb, se atribuie dinainte — de asta există.
+
 Capturile stau în `docs/<versiune>/`. Un set nou se face doar când pagina chiar arată altfel — o versiune care schimbă numai comportamentul sau documentația trimite la setul versiunii dinainte și spune asta. Se generează cu `tools/capturi.ps1`.
 
+### 0.0.6
+
+<sub>`0.0.6.01`</sub>
+
+Commit-urile capătă numere. Fiecare primește un `0.0.N.xx` — versiunea push-ului, plus poziția în interiorul ei — scris ca prefix în subiect și listat aici, lângă hash. Etichetele git rămân doar ale versiunilor.
+
+Istoricul de până acum s-a numerotat fără nicio rescriere: cele șase commit-uri și cele cinci etichete sunt neatinse, iar numerele lor sunt consemnate în intrările de mai jos. Subiectele vechi rămân cum au fost — rescrierea lor ar fi schimbat toate hash-urile și ar fi rupt etichetele deja publicate.
+
+Așa capătă identificare și versiunea 0.0.5, care rămăsese fără: hash-ul nu i se putuse scrie, fiindcă un commit nu-și poate conține propriul identificator, dar un număr atribuit dinainte nu are problema asta.
+
 ### 0.0.5
+
+<sub>`0.0.5.01` `60b9eb7`</sub>
 
 Pagina își spune versiunea. În subsol, ultimul rând, un colofon despărțit printr-o linie subțire: versiunea, data ei și o legătură către depozit. Cine are o copie a fișierului știe acum ce ține în mână. Legătura nu încarcă nimic de pe alt server, deci pagina rămâne autonomă.
 
@@ -69,29 +87,37 @@ Capturile s-au mutat în foldere pe versiuni, `docs/<versiune>/`. Refăcute cu i
 
 Tot aici s-au scris în README regulile de versionare de mai sus, iar intrarea 0.0.4 a fost completată cu al doilea hash, care lipsea.
 
-### 0.0.4 — `11a7043`, `f24a954`
+### 0.0.4
 
-`11a7043` aduce README-ul rescris pe versiuni și primele capturi ale întregii pagini — desktop și telefon, în temă luminoasă și întunecată.
+<sub>`0.0.4.01` `11a7043` · `0.0.4.02` `f24a954`</sub>
 
-`f24a954` scoate din secțiunea „Ce nu se poate spune" mențiunea despre sebastianism. Rămân neatinse corectura despre Camões, Pessoa și Almada Negreiros, cea despre versul gravat la Cabo da Roca, și poetul Sebastião da Gama — care e altceva decât mitul, chiar dacă poartă același nume.
+`0.0.4.01` aduce README-ul rescris pe versiuni și primele capturi ale întregii pagini — desktop și telefon, în temă luminoasă și întunecată.
 
-### 0.0.3 — `126612a`
+`0.0.4.02` scoate din secțiunea „Ce nu se poate spune" mențiunea despre sebastianism. Rămân neatinse corectura despre Camões, Pessoa și Almada Negreiros, cea despre versul gravat la Cabo da Roca, și poetul Sebastião da Gama — care e altceva decât mitul, chiar dacă poartă același nume.
+
+### 0.0.3
+
+<sub>`0.0.3.01` `126612a`</sub>
 
 Fereastra modală ține minte poziția de citire. Un cartonaș deschis prima oară pornește de sus; unul deschis a doua oară se redeschide exact unde a rămas cititorul, cât ține vizita.
 
 Poziția se reține pe măsură ce se derulează, nu la închidere — la închidere `<dialog>` e deja ascuns, iar `scrollTop` al unui element ascuns se citește 0. Așa sunt acoperite toate căile de închidere: butonul, Esc și clicul pe fundal.
 
-### 0.0.2 — `40e4eea`
+### 0.0.2
+
+<sub>`0.0.2.01` `40e4eea`</sub>
 
 Scoasă secțiunea „Capete de lume", tabelul care compara promontoriul cu alte capete de lume. Cartonașele s-au renumerotat singure, de la 19 la 18, fiindcă numărul e calculat din poziție.
 
 Corectura despre versul *„onde a terra se acaba e o mar começa"* — gravat la Cabo da Roca, fără legătură cu Espichel — trăia numai în tabelul scos, așa că a fost mutată în secțiunea „Ce nu se poate spune".
 
-### 0.0.1 — `7297996`
+### 0.0.1
+
+<sub>`0.0.1.01` `7297996`</sub>
 
 Prima publicare: pagina autonomă, cu povestea centrală, nouăsprezece secțiuni în ferestre modale și marcajele de fiabilitate pe fiecare afirmație.
 
-<sub>Fiecare versiune are eticheta ei în depozit: `v0.0.1`, `v0.0.2`, `v0.0.3`, `v0.0.4`, `v0.0.5`.</sub>
+<sub>Fiecare versiune are eticheta ei în depozit: `v0.0.1`, `v0.0.2`, `v0.0.3`, `v0.0.4`, `v0.0.5`, `v0.0.6`.</sub>
 
 ## Despre sanctuar
 
